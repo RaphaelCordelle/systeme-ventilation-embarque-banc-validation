@@ -1,0 +1,32 @@
+# ESP-IDF generated output
+**/build/
+**/managed_components/
+**/sdkconfig
+**/sdkconfig.old
+**/sdkconfig.ci
+
+# Unmodified ESP-IDF hello_world tests kept locally for reference
+**/pytest_hello_world.py
+
+# Unused copies of the Bosch driver kept locally in later exercises
+tp04_gpio/main/bme280.c
+tp04_gpio/main/bme280.h
+tp04_gpio/main/bme280_defs.h
+tp05_gpio/main/bme280.c
+tp05_gpio/main/bme280.h
+tp05_gpio/main/bme280_defs.h
+tp06_servo/main/bme280.c
+tp06_servo/main/bme280.h
+tp06_servo/main/bme280_defs.h
+
+# Local tooling
+.vscode/
+.idea/
+__pycache__/
+*.py[cod]
+*.log
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+desktop.ini
