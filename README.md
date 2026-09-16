@@ -1,4 +1,4 @@
-# Système de ventilation embarqué et banc de validation
+# Système de ventilation embarqué & banc de validation
 
 <p align="center">
   <img src="docs/images/banc-esp32.jpg" alt="Banc d’essai ESP32 sur breadboard" width="520">
