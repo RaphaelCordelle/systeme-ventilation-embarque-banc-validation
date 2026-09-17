@@ -18,14 +18,7 @@ Suite de firmwares ESP-IDF écrits en C pour tester séparément les entrées, c
 
 Le signal ECHO du HC-SR04 passe par un pont diviseur 5 V vers 3,3 V. Le servo utilise une alimentation 5 V séparée avec masse commune.
 
-## Logique de validation
-
-Le travail est organisé par interface :
-
-1. faire fonctionner un périphérique seul ;
-2. vérifier les mesures ou les transitions dans le moniteur série ;
-3. traiter les valeurs invalides et les timeouts ;
-4. consigner le résultat observé.
+## Essais
 
 Les essais ont notamment couvert les rebonds des fins de course, l’état contradictoire, un ECHO bloqué et la coupure PWM après timeout. TP02, TP05 et TP06 compilent ; le tableau ci-dessus distingue les observations sur carte des simples vérifications de compilation.
 
@@ -39,10 +32,15 @@ idf.py build
 idf.py -p COMx flash monitor
 ```
 
-## Médias
+## Vidéos
 
-- [Essai du banc — vidéo 1, 15 s](docs/videos/essai-banc-01.mp4)
-- [Essai du banc — vidéo 2, 8 s](docs/videos/essai-banc-02.mp4)
+Essai du banc, 15 s :
+
+https://github.com/user-attachments/assets/1c9176a8-151d-4e2f-90f9-9f3effd45db5
+
+Essai du banc, 8 s :
+
+https://github.com/user-attachments/assets/89d56388-3c67-4811-beb6-8fc78e89c3e2
 
 ## Code tiers
 
