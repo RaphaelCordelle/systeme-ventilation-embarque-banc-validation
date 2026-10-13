@@ -1,0 +1,39 @@
+{
+  "project": "TP16.5 Final Integrated Ventilation Bench",
+  "release": "1.0.0",
+  "status": "HARDWARE_VALIDATED",
+  "validated_at": "2026-10-10T12:51:54",
+  "firmware": {
+    "dut": "1.0.0",
+    "bench": "1.0.0"
+  },
+  "target": "esp32",
+  "environment": {
+    "esp_idf_expected": "6.1",
+    "dut_port_expected": "COM7",
+    "bench_port_expected": "COM5"
+  },
+  "included_features": [
+    "BME280 DUT and independent BME280 reference",
+    "HC-SR04 obstacle sensing",
+    "SG90 flap actuation",
+    "OPEN/CLOSED end-stop feedback",
+    "red/yellow/green status LEDs",
+    "buzzer SAFE alarm",
+    "FreeRTOS task architecture",
+    "UART framed DUT/BENCH protocol",
+    "automatic temperature/humidity control with hysteresis",
+    "obstacle-triggered reopen during closing",
+    "smoke test and diagnostic snapshots",
+    "JSON/CSV/HTML/XLSX demo reporting"
+  ],
+  "excluded": [
+    "HMAC / anti-replay security",
+    "CAN extension"
+  ],
+  "acceptance_document": "docs/ACCEPTANCE_CHECKLIST.md",
+  "evidence": {
+    "report": "reports/demo_20261010_124952.json",
+    "serial_log": "evidence/demo_serial_20261010_124952.log"
+  }
+}

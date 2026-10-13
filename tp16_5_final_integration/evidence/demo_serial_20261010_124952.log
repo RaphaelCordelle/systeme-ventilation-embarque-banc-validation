@@ -1,0 +1,392 @@
+I (676) BENCH_PROTOCOL: DUT state=0(UNKNOWN) latency=102372 us
+I (676) BENCH_SMOKE: DUT communication OK state=0
+I (676) BENCH_SMOKE: SMOKE TEST PASS
+I (676) BENCH: Bench smoke test PASS
+I (686) BENCH: PC supervision ready
+I (686) BENCH: Commands: GET_VERSIONS | GET_REFERENCE | GET_DUT_TELEMETRY | GET_DIAGNOSTICS | GET_SNAPSHOT | AUTO_ON/OFF | RUN_SMOKE | FORWARD_COMMAND GET_STATUS/OPEN/CLOSE
+I (706) BENCH: PC RX: [GET_VERSIONS]
+I (706) BENCH: ================================
+I (706) BENCH: Bench initialization complete
+I (716) BENCH: HIL supervision ready
+I (716) BENCH: ================================
+I (726) main_task: Returned from app_main()
+I (806) BENCH_PROTOCOL: DUT telemetry: state=0(UNKNOWN) T=24.41 H=41.27 P=1006.20 latency=101285 us
+I (806) BENCH: COMPARE | REF 21.61C 49.76% 1006.55hPa | DUT 24.41C 41.27% 1006.20hPa | dT=2.80 dH=8.49 dP=0.35
+I (806) BENCH_PROTOCOL: BENCH_VERSION=1.0.0
+I (916) BENCH_PROTOCOL: DUT version=1.0.0 latency=97515 us
+I (916) BENCH_PROTOCOL: DUT_VERSION=1.0.0
+I (1026) BENCH: PC RX: [RUN_SMOKE]
+I (1046) BENCH_SMOKE: Reference sensor OK
+I (1136) BENCH_PROTOCOL: DUT state=0(UNKNOWN) latency=93725 us
+I (1136) BENCH_SMOKE: DUT communication OK state=0
+I (1136) BENCH_SMOKE: SMOKE TEST PASS
+I (1136) BENCH: RUN_SMOKE -> PASS
+I (1206) BENCH: PC RX: [AUTO_ON]
+I (1296) BENCH_PROTOCOL: SET_AUTO ON acknowledged latency=97100 us
+I (1206) BENCH_PROTOCOL: AUTO -> ON
+I (1326) BENCH: PC RX: [GET_SNAPSHOT]
+I (1436) BENCH_PROTOCOL: DUT diag: state=UNKNOWN auto=1 T=24.38 H=41.29 P=1006.26 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95224 us
+I (1446) BENCH_PROTOCOL: SNAPSHOT state=UNKNOWN auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.38 H=41.29 P=1006.26 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.61 ref_H=49.76 ref_P=1006.63 dT=2.77 dH=8.47 dP=0.37
+I (2326) BENCH: PC RX: [GET_SNAPSHOT]
+I (2436) BENCH_PROTOCOL: DUT diag: state=UNKNOWN auto=1 T=24.36 H=41.32 P=1006.25 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95201 us
+I (2436) BENCH_PROTOCOL: SNAPSHOT state=UNKNOWN auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.36 H=41.32 P=1006.25 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.61 ref_H=49.76 ref_P=1006.59 dT=2.75 dH=8.44 dP=0.34
+I (3326) BENCH: PC RX: [GET_SNAPSHOT]
+I (3436) BENCH_PROTOCOL: DUT diag: state=UNKNOWN auto=1 T=24.31 H=41.31 P=1006.26 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95186 us
+I (3446) BENCH_PROTOCOL: SNAPSHOT state=UNKNOWN auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.31 H=41.31 P=1006.26 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.60 ref_H=49.75 ref_P=1006.56 dT=2.71 dH=8.44 dP=0.30
+I (4326) BENCH: PC RX: [GET_SNAPSHOT]
+I (4436) BENCH_PROTOCOL: DUT diag: state=UNKNOWN auto=1 T=24.29 H=41.32 P=1006.28 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95248 us
+I (4446) BENCH_PROTOCOL: SNAPSHOT state=UNKNOWN auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.29 H=41.32 P=1006.28 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.61 ref_H=49.77 ref_P=1006.59 dT=2.68 dH=8.45 dP=0.31
+I (5326) BENCH: PC RX: [GET_SNAPSHOT]
+I (5436) BENCH_PROTOCOL: DUT diag: state=CLOSING auto=1 T=24.24 H=41.65 P=1006.25 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95225 us
+I (5446) BENCH_PROTOCOL: SNAPSHOT state=CLOSING auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.24 H=41.65 P=1006.25 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.63 ref_H=50.18 ref_P=1006.57 dT=2.61 dH=8.53 dP=0.32
+I (6326) BENCH: PC RX: [GET_SNAPSHOT]
+I (6436) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=24.22 H=41.80 P=1006.30 D=8.7 obstacle=1 limits[O=0 C=1 X=0] latency=95224 us
+I (6436) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=1 T=24.22 H=41.80 P=1006.30 D=8.7 open=0 closed=1 contradiction=0 ref_T=21.63 ref_H=50.20 ref_P=1006.61 dT=2.59 dH=8.40 dP=0.31
+I (7326) BENCH: PC RX: [GET_SNAPSHOT]
+I (7436) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=24.19 H=41.87 P=1006.23 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95190 us
+I (7436) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.19 H=41.87 P=1006.23 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.65 ref_H=50.08 ref_P=1006.56 dT=2.54 dH=8.21 dP=0.33
+I (8326) BENCH: PC RX: [GET_SNAPSHOT]
+I (8436) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=24.17 H=41.90 P=1006.19 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95174 us
+I (8436) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.17 H=41.90 P=1006.19 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.64 ref_H=49.96 ref_P=1006.57 dT=2.53 dH=8.06 dP=0.38
+I (9326) BENCH: PC RX: [GET_SNAPSHOT]
+I (9436) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=24.14 H=41.92 P=1006.23 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95164 us
+I (9436) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.14 H=41.92 P=1006.23 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.64 ref_H=49.88 ref_P=1006.57 dT=2.50 dH=7.96 dP=0.34
+I (10326) BENCH: PC RX: [GET_SNAPSHOT]
+I (10436) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=24.11 H=42.01 P=1006.26 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95211 us
+I (10446) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.11 H=42.01 P=1006.26 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.65 ref_H=49.84 ref_P=1006.61 dT=2.46 dH=7.83 dP=0.35
+I (11326) BENCH: PC RX: [GET_SNAPSHOT]
+I (11436) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=24.94 H=45.14 P=1006.32 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95213 us
+I (11446) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.94 H=45.14 P=1006.32 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.65 ref_H=49.86 ref_P=1006.53 dT=3.29 dH=4.72 dP=0.21
+I (12326) BENCH: PC RX: [GET_SNAPSHOT]
+I (12436) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=25.75 H=46.38 P=1006.25 D=4.2 obstacle=1 limits[O=0 C=0 X=0] latency=95180 us
+I (12436) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=1 T=25.75 H=46.38 P=1006.25 D=4.2 open=0 closed=0 contradiction=0 ref_T=21.67 ref_H=49.87 ref_P=1006.56 dT=4.08 dH=3.49 dP=0.31
+I (13326) BENCH: PC RX: [GET_SNAPSHOT]
+I (13436) BENCH_PROTOCOL: DUT diag: state=OPENING auto=1 T=26.18 H=46.59 P=1006.28 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95208 us
+I (13446) BENCH_PROTOCOL: SNAPSHOT state=OPENING auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=26.18 H=46.59 P=1006.28 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.65 ref_H=49.84 ref_P=1006.53 dT=4.53 dH=3.25 dP=0.25
+I (14336) BENCH: PC RX: [GET_SNAPSHOT]
+I (14446) BENCH_PROTOCOL: DUT diag: state=OPENING auto=1 T=26.21 H=45.32 P=1006.26 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95216 us
+I (14456) BENCH_PROTOCOL: SNAPSHOT state=OPENING auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=26.21 H=45.32 P=1006.26 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.65 ref_H=49.80 ref_P=1006.48 dT=4.56 dH=4.48 dP=0.22
+I (15336) BENCH: PC RX: [GET_SNAPSHOT]
+I (15446) BENCH_PROTOCOL: DUT diag: state=OPENING auto=1 T=26.06 H=42.91 P=1006.30 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95197 us
+I (15456) BENCH_PROTOCOL: SNAPSHOT state=OPENING auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=26.06 H=42.91 P=1006.30 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.65 ref_H=49.77 ref_P=1006.53 dT=4.41 dH=6.86 dP=0.23
+I (16336) BENCH: PC RX: [GET_SNAPSHOT]
+I (16446) BENCH_PROTOCOL: DUT diag: state=OPEN auto=1 T=25.97 H=41.91 P=1006.30 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95338 us
+I (16456) BENCH_PROTOCOL: SNAPSHOT state=OPEN auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=25.97 H=41.91 P=1006.30 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.66 ref_H=49.76 ref_P=1006.57 dT=4.31 dH=7.85 dP=0.27
+I (17336) BENCH: PC RX: [GET_SNAPSHOT]
+I (17446) BENCH_PROTOCOL: DUT diag: state=OPEN auto=1 T=25.90 H=41.34 P=1006.21 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95235 us
+I (17446) BENCH_PROTOCOL: SNAPSHOT state=OPEN auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=25.90 H=41.34 P=1006.21 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.66 ref_H=49.75 ref_P=1006.58 dT=4.24 dH=8.41 dP=0.37
+I (18336) BENCH: PC RX: [GET_SNAPSHOT]
+I (18446) BENCH_PROTOCOL: DUT diag: state=OPEN auto=1 T=25.81 H=40.94 P=1006.23 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95220 us
+I (18446) BENCH_PROTOCOL: SNAPSHOT state=OPEN auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=25.81 H=40.94 P=1006.23 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.65 ref_H=49.75 ref_P=1006.51 dT=4.16 dH=8.81 dP=0.28
+I (19336) BENCH: PC RX: [GET_SNAPSHOT]
+I (19446) BENCH_PROTOCOL: DUT diag: state=OPEN auto=1 T=25.71 H=40.61 P=1006.18 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95209 us
+I (19446) BENCH_PROTOCOL: SNAPSHOT state=OPEN auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=25.71 H=40.61 P=1006.18 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.65 ref_H=49.72 ref_P=1006.53 dT=4.06 dH=9.11 dP=0.35
+I (20336) BENCH: PC RX: [GET_SNAPSHOT]
+I (20446) BENCH_PROTOCOL: DUT diag: state=OPEN auto=1 T=25.63 H=40.49 P=1006.23 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95258 us
+I (20446) BENCH_PROTOCOL: SNAPSHOT state=OPEN auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=25.63 H=40.49 P=1006.23 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.65 ref_H=49.71 ref_P=1006.47 dT=3.98 dH=9.22 dP=0.24
+I (21336) BENCH: PC RX: [GET_SNAPSHOT]
+I (21446) BENCH_PROTOCOL: DUT diag: state=OPEN auto=1 T=25.54 H=40.36 P=1006.22 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95191 us
+I (21446) BENCH_PROTOCOL: SNAPSHOT state=OPEN auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=25.54 H=40.36 P=1006.22 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.66 ref_H=49.70 ref_P=1006.58 dT=3.88 dH=9.34 dP=0.36
+I (22336) BENCH: PC RX: [GET_SNAPSHOT]
+I (22446) BENCH_PROTOCOL: DUT diag: state=OPEN auto=1 T=25.47 H=40.32 P=1006.21 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95159 us
+I (22446) BENCH_PROTOCOL: SNAPSHOT state=OPEN auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=25.47 H=40.32 P=1006.21 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.64 ref_H=49.69 ref_P=1006.54 dT=3.83 dH=9.37 dP=0.33
+I (23336) BENCH: PC RX: [GET_SNAPSHOT]
+I (23446) BENCH_PROTOCOL: DUT diag: state=OPEN auto=1 T=25.39 H=40.29 P=1006.19 D=8.3 obstacle=1 limits[O=0 C=0 X=0] latency=95351 us
+I (23446) BENCH_PROTOCOL: SNAPSHOT state=OPEN auto=1 sensor_valid=1 distance_valid=1 obstacle=1 T=25.39 H=40.29 P=1006.19 D=8.3 open=0 closed=0 contradiction=0 ref_T=21.64 ref_H=49.70 ref_P=1006.52 dT=3.75 dH=9.41 dP=0.33
+I (24346) BENCH: PC RX: [GET_SNAPSHOT]
+I (24456) BENCH_PROTOCOL: DUT diag: state=OPEN auto=1 T=25.32 H=40.27 P=1006.23 D=8.0 obstacle=1 limits[O=0 C=0 X=0] latency=95195 us
+I (24456) BENCH_PROTOCOL: SNAPSHOT state=OPEN auto=1 sensor_valid=1 distance_valid=1 obstacle=1 T=25.32 H=40.27 P=1006.23 D=8.0 open=0 closed=0 contradiction=0 ref_T=21.65 ref_H=49.71 ref_P=1006.56 dT=3.67 dH=9.44 dP=0.33
+I (25336) BENCH: PC RX: [GET_SNAPSHOT]
+I (25446) BENCH_PROTOCOL: DUT diag: state=OPEN auto=1 T=25.25 H=40.27 P=1006.21 D=8.7 obstacle=1 limits[O=0 C=0 X=0] latency=95181 us
+I (25446) BENCH_PROTOCOL: SNAPSHOT state=OPEN auto=1 sensor_valid=1 distance_valid=1 obstacle=1 T=25.25 H=40.27 P=1006.21 D=8.7 open=0 closed=0 contradiction=0 ref_T=21.65 ref_H=49.73 ref_P=1006.53 dT=3.60 dH=9.46 dP=0.32
+I (26346) BENCH: PC RX: [GET_SNAPSHOT]
+I (26406) BENCH_PROTOCOL: DUT telemetry: state=3(OPEN) T=25.19 H=40.38 P=1006.24 latency=95291 us
+I (26406) BENCH: COMPARE | REF 21.64C 49.69% 1006.60hPa | DUT 25.19C 40.38% 1006.24hPa | dT=3.55 dH=9.31 dP=0.36
+I (26536) BENCH_PROTOCOL: DUT diag: state=OPEN auto=1 T=25.18 H=40.42 P=1006.21 D=9.4 obstacle=1 limits[O=0 C=0 X=0] latency=99495 us
+I (26536) BENCH_PROTOCOL: SNAPSHOT state=OPEN auto=1 sensor_valid=1 distance_valid=1 obstacle=1 T=25.18 H=40.42 P=1006.21 D=9.4 open=0 closed=0 contradiction=0 ref_T=21.64 ref_H=49.68 ref_P=1006.49 dT=3.54 dH=9.26 dP=0.28
+I (27336) BENCH: PC RX: [GET_SNAPSHOT]
+I (27446) BENCH_PROTOCOL: DUT diag: state=OPEN auto=1 T=25.13 H=40.51 P=1006.18 D=9.0 obstacle=1 limits[O=0 C=0 X=0] latency=95232 us
+I (27446) BENCH_PROTOCOL: SNAPSHOT state=OPEN auto=1 sensor_valid=1 distance_valid=1 obstacle=1 T=25.13 H=40.51 P=1006.18 D=9.0 open=0 closed=0 contradiction=0 ref_T=21.63 ref_H=49.67 ref_P=1006.55 dT=3.50 dH=9.16 dP=0.37
+I (28336) BENCH: PC RX: [GET_SNAPSHOT]
+I (28446) BENCH_PROTOCOL: DUT diag: state=OPEN auto=1 T=25.05 H=40.52 P=1006.18 D=9.0 obstacle=1 limits[O=0 C=0 X=0] latency=95213 us
+I (28446) BENCH_PROTOCOL: SNAPSHOT state=OPEN auto=1 sensor_valid=1 distance_valid=1 obstacle=1 T=25.05 H=40.52 P=1006.18 D=9.0 open=0 closed=0 contradiction=0 ref_T=21.64 ref_H=49.66 ref_P=1006.54 dT=3.41 dH=9.14 dP=0.36
+I (29346) BENCH: PC RX: [GET_SNAPSHOT]
+I (29456) BENCH_PROTOCOL: DUT diag: state=OPEN auto=1 T=25.02 H=40.51 P=1006.27 D=9.0 obstacle=1 limits[O=0 C=0 X=0] latency=95195 us
+I (29456) BENCH_PROTOCOL: SNAPSHOT state=OPEN auto=1 sensor_valid=1 distance_valid=1 obstacle=1 T=25.02 H=40.51 P=1006.27 D=9.0 open=0 closed=0 contradiction=0 ref_T=21.64 ref_H=49.67 ref_P=1006.60 dT=3.38 dH=9.16 dP=0.33
+I (30346) BENCH: PC RX: [GET_SNAPSHOT]
+I (30456) BENCH_PROTOCOL: DUT diag: state=OPENING auto=1 T=24.96 H=40.52 P=1006.31 D=9.0 obstacle=1 limits[O=0 C=0 X=0] latency=95245 us
+I (30466) BENCH_PROTOCOL: SNAPSHOT state=OPENING auto=1 sensor_valid=1 distance_valid=1 obstacle=1 T=24.96 H=40.52 P=1006.31 D=9.0 open=0 closed=0 contradiction=0 ref_T=21.65 ref_H=49.68 ref_P=1006.48 dT=3.31 dH=9.16 dP=0.17
+I (31346) BENCH: PC RX: [GET_SNAPSHOT]
+I (31456) BENCH_PROTOCOL: DUT diag: state=OPENING auto=1 T=24.92 H=40.58 P=1006.29 D=9.0 obstacle=1 limits[O=0 C=0 X=0] latency=95233 us
+I (31466) BENCH_PROTOCOL: SNAPSHOT state=OPENING auto=1 sensor_valid=1 distance_valid=1 obstacle=1 T=24.92 H=40.58 P=1006.29 D=9.0 open=0 closed=0 contradiction=0 ref_T=21.65 ref_H=49.69 ref_P=1006.56 dT=3.27 dH=9.11 dP=0.27
+I (32346) BENCH: PC RX: [GET_SNAPSHOT]
+I (32456) BENCH_PROTOCOL: DUT diag: state=OPENING auto=1 T=24.87 H=40.66 P=1006.27 D=5.8 obstacle=1 limits[O=0 C=0 X=0] latency=95236 us
+I (32466) BENCH_PROTOCOL: SNAPSHOT state=OPENING auto=1 sensor_valid=1 distance_valid=1 obstacle=1 T=24.87 H=40.66 P=1006.27 D=5.8 open=0 closed=0 contradiction=0 ref_T=21.66 ref_H=49.66 ref_P=1006.57 dT=3.21 dH=9.00 dP=0.30
+I (33346) BENCH: PC RX: [GET_SNAPSHOT]
+I (33456) BENCH_PROTOCOL: DUT diag: state=CLOSING auto=1 T=24.81 H=40.72 P=1006.26 D=5.8 obstacle=1 limits[O=1 C=0 X=0] latency=95178 us
+I (33456) BENCH_PROTOCOL: SNAPSHOT state=CLOSING auto=1 sensor_valid=1 distance_valid=1 obstacle=1 T=24.81 H=40.72 P=1006.26 D=5.8 open=1 closed=0 contradiction=0 ref_T=21.67 ref_H=49.68 ref_P=1006.51 dT=3.14 dH=8.96 dP=0.25
+I (34346) BENCH: PC RX: [GET_SNAPSHOT]
+I (34456) BENCH_PROTOCOL: DUT diag: state=OPENING auto=1 T=24.77 H=40.72 P=1006.25 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95187 us
+I (34466) BENCH_PROTOCOL: SNAPSHOT state=OPENING auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.77 H=40.72 P=1006.25 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.66 ref_H=49.68 ref_P=1006.60 dT=3.11 dH=8.96 dP=0.35
+I (35346) BENCH: PC RX: [GET_SNAPSHOT]
+I (35456) BENCH_PROTOCOL: DUT diag: state=CLOSING auto=1 T=24.73 H=40.74 P=1006.27 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95221 us
+I (35466) BENCH_PROTOCOL: SNAPSHOT state=CLOSING auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.73 H=40.74 P=1006.27 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.67 ref_H=49.69 ref_P=1006.56 dT=3.06 dH=8.95 dP=0.29
+I (36346) BENCH: PC RX: [GET_SNAPSHOT]
+I (36456) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=24.69 H=40.78 P=1006.26 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95226 us
+I (36466) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.69 H=40.78 P=1006.26 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.67 ref_H=49.69 ref_P=1006.60 dT=3.02 dH=8.91 dP=0.34
+I (37346) BENCH: PC RX: [GET_SNAPSHOT]
+I (37456) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=24.66 H=40.78 P=1006.26 D=63.1 obstacle=0 limits[O=0 C=0 X=0] latency=95227 us
+I (37466) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.66 H=40.78 P=1006.26 D=63.1 open=0 closed=0 contradiction=0 ref_T=21.68 ref_H=49.68 ref_P=1006.48 dT=2.98 dH=8.90 dP=0.22
+I (38346) BENCH: PC RX: [GET_SNAPSHOT]
+I (38456) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=24.61 H=40.81 P=1006.30 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95171 us
+I (38466) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.61 H=40.81 P=1006.30 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.69 ref_H=49.69 ref_P=1006.51 dT=2.92 dH=8.88 dP=0.21
+I (39346) BENCH: PC RX: [GET_SNAPSHOT]
+I (39456) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=24.58 H=40.91 P=1006.25 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95178 us
+I (39456) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.58 H=40.91 P=1006.25 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.70 ref_H=49.68 ref_P=1006.58 dT=2.88 dH=8.77 dP=0.33
+I (40346) BENCH: PC RX: [GET_SNAPSHOT]
+I (40456) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=24.54 H=41.05 P=1006.27 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95214 us
+I (40466) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.54 H=41.05 P=1006.27 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.69 ref_H=49.68 ref_P=1006.62 dT=2.85 dH=8.63 dP=0.35
+I (41346) BENCH: PC RX: [GET_SNAPSHOT]
+I (41456) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=24.51 H=41.18 P=1006.28 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95218 us
+I (41466) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.51 H=41.18 P=1006.28 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.68 ref_H=49.66 ref_P=1006.61 dT=2.83 dH=8.48 dP=0.33
+I (42346) BENCH: PC RX: [GET_SNAPSHOT]
+I (42456) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=24.48 H=41.24 P=1006.34 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95221 us
+I (42466) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.48 H=41.24 P=1006.34 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.67 ref_H=49.66 ref_P=1006.57 dT=2.81 dH=8.42 dP=0.23
+I (43356) BENCH: PC RX: [GET_SNAPSHOT]
+I (43466) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=24.44 H=41.26 P=1006.25 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95366 us
+I (43476) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.44 H=41.26 P=1006.25 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.67 ref_H=49.64 ref_P=1006.60 dT=2.77 dH=8.38 dP=0.35
+I (44346) BENCH: PC RX: [GET_SNAPSHOT]
+I (44456) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=24.42 H=41.22 P=1006.26 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95241 us
+I (44466) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.42 H=41.22 P=1006.26 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.67 ref_H=49.66 ref_P=1006.56 dT=2.75 dH=8.44 dP=0.30
+I (45346) BENCH: PC RX: [GET_SNAPSHOT]
+I (45456) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=24.39 H=41.22 P=1006.33 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95207 us
+I (45466) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.39 H=41.22 P=1006.33 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.67 ref_H=49.66 ref_P=1006.60 dT=2.72 dH=8.44 dP=0.27
+I (46346) BENCH: PC RX: [GET_SNAPSHOT]
+I (46456) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=24.36 H=41.20 P=1006.33 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95186 us
+I (46466) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.36 H=41.20 P=1006.33 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.67 ref_H=49.66 ref_P=1006.56 dT=2.69 dH=8.46 dP=0.23
+I (47356) BENCH: PC RX: [GET_SNAPSHOT]
+I (47466) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=24.33 H=41.25 P=1006.29 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95274 us
+I (47476) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.33 H=41.25 P=1006.29 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.69 ref_H=49.66 ref_P=1006.65 dT=2.64 dH=8.41 dP=0.36
+I (48346) BENCH: PC RX: [GET_SNAPSHOT]
+I (48456) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=24.30 H=41.24 P=1006.29 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95106 us
+I (48456) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.30 H=41.24 P=1006.29 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.66 ref_H=49.66 ref_P=1006.58 dT=2.64 dH=8.42 dP=0.29
+I (49356) BENCH: PC RX: [GET_SNAPSHOT]
+I (49466) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=24.28 H=41.25 P=1006.26 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95170 us
+I (49466) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.28 H=41.25 P=1006.26 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.66 ref_H=49.64 ref_P=1006.63 dT=2.62 dH=8.39 dP=0.37
+I (50356) BENCH: PC RX: [GET_SNAPSHOT]
+I (50466) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=24.26 H=41.28 P=1006.29 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95331 us
+I (50476) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.26 H=41.28 P=1006.29 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.67 ref_H=49.64 ref_P=1006.56 dT=2.59 dH=8.36 dP=0.27
+I (51356) BENCH: PC RX: [GET_SNAPSHOT]
+I (51466) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=24.23 H=41.30 P=1006.26 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95196 us
+I (51476) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.23 H=41.30 P=1006.26 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.67 ref_H=49.65 ref_P=1006.59 dT=2.56 dH=8.35 dP=0.33
+I (52356) BENCH: PC RX: [GET_SNAPSHOT]
+I (52466) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=24.21 H=41.33 P=1006.34 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95199 us
+I (52476) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.21 H=41.33 P=1006.34 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.67 ref_H=49.66 ref_P=1006.59 dT=2.54 dH=8.33 dP=0.25
+I (53356) BENCH: PC RX: [GET_SNAPSHOT]
+I (53466) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=24.18 H=41.38 P=1006.30 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95212 us
+I (53476) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.18 H=41.38 P=1006.30 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.66 ref_H=49.64 ref_P=1006.52 dT=2.52 dH=8.26 dP=0.22
+I (54356) BENCH: PC RX: [GET_SNAPSHOT]
+I (54466) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=24.15 H=41.40 P=1006.33 D=63.1 obstacle=0 limits[O=0 C=0 X=0] latency=95220 us
+I (54476) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.15 H=41.40 P=1006.33 D=63.1 open=0 closed=0 contradiction=0 ref_T=21.67 ref_H=49.64 ref_P=1006.57 dT=2.48 dH=8.24 dP=0.24
+I (55356) BENCH: PC RX: [GET_SNAPSHOT]
+I (55466) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=24.13 H=41.42 P=1006.36 D=62.8 obstacle=0 limits[O=0 C=0 X=0] latency=95185 us
+I (55476) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.13 H=41.42 P=1006.36 D=62.8 open=0 closed=0 contradiction=0 ref_T=21.67 ref_H=49.62 ref_P=1006.60 dT=2.46 dH=8.20 dP=0.24
+I (56356) BENCH: PC RX: [GET_SNAPSHOT]
+I (56466) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=24.12 H=41.45 P=1006.28 D=63.1 obstacle=0 limits[O=0 C=0 X=0] latency=95189 us
+I (56476) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.12 H=41.45 P=1006.28 D=63.1 open=0 closed=0 contradiction=0 ref_T=21.67 ref_H=49.62 ref_P=1006.51 dT=2.45 dH=8.17 dP=0.23
+I (57356) BENCH: PC RX: [GET_SNAPSHOT]
+I (57466) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=24.10 H=41.48 P=1006.28 D=63.1 obstacle=0 limits[O=0 C=0 X=0] latency=95399 us
+I (57476) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.10 H=41.48 P=1006.28 D=63.1 open=0 closed=0 contradiction=0 ref_T=21.67 ref_H=49.65 ref_P=1006.54 dT=2.43 dH=8.17 dP=0.26
+I (58356) BENCH: PC RX: [GET_SNAPSHOT]
+I (58466) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=24.08 H=41.53 P=1006.27 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95205 us
+I (58476) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.08 H=41.53 P=1006.27 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.67 ref_H=49.65 ref_P=1006.57 dT=2.41 dH=8.12 dP=0.30
+I (59356) BENCH: PC RX: [GET_SNAPSHOT]
+I (59466) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=24.06 H=41.56 P=1006.32 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95142 us
+I (59466) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.06 H=41.56 P=1006.32 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.68 ref_H=49.64 ref_P=1006.55 dT=2.38 dH=8.08 dP=0.23
+I (60356) BENCH: PC RX: [GET_SNAPSHOT]
+I (60466) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=24.04 H=41.57 P=1006.31 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95177 us
+I (60476) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.04 H=41.57 P=1006.31 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.68 ref_H=49.66 ref_P=1006.55 dT=2.36 dH=8.09 dP=0.24
+I (61366) BENCH: PC RX: [GET_SNAPSHOT]
+I (61476) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=24.02 H=41.61 P=1006.34 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95244 us
+I (61486) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=24.02 H=41.61 P=1006.34 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.68 ref_H=49.65 ref_P=1006.60 dT=2.34 dH=8.04 dP=0.26
+I (62366) BENCH: PC RX: [GET_SNAPSHOT]
+I (62476) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.99 H=41.63 P=1006.35 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95178 us
+I (62486) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.99 H=41.63 P=1006.35 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.69 ref_H=49.65 ref_P=1006.57 dT=2.30 dH=8.02 dP=0.22
+I (63366) BENCH: PC RX: [GET_SNAPSHOT]
+I (63476) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.98 H=41.64 P=1006.30 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95190 us
+I (63486) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.98 H=41.64 P=1006.30 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.69 ref_H=49.62 ref_P=1006.59 dT=2.29 dH=7.98 dP=0.29
+I (64366) BENCH: PC RX: [GET_SNAPSHOT]
+I (64476) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.96 H=41.66 P=1006.30 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95268 us
+I (64486) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.96 H=41.66 P=1006.30 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.68 ref_H=49.64 ref_P=1006.59 dT=2.28 dH=7.98 dP=0.29
+I (65366) BENCH: PC RX: [GET_SNAPSHOT]
+I (65476) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.93 H=41.67 P=1006.33 D=63.1 obstacle=0 limits[O=0 C=0 X=0] latency=95232 us
+I (65486) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.93 H=41.67 P=1006.33 D=63.1 open=0 closed=0 contradiction=0 ref_T=21.68 ref_H=49.65 ref_P=1006.58 dT=2.25 dH=7.98 dP=0.25
+I (66366) BENCH: PC RX: [GET_SNAPSHOT]
+I (66476) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.91 H=41.71 P=1006.28 D=10.4 obstacle=1 limits[O=0 C=0 X=0] latency=95238 us
+I (66486) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=1 T=23.91 H=41.71 P=1006.28 D=10.4 open=0 closed=0 contradiction=0 ref_T=21.68 ref_H=49.63 ref_P=1006.53 dT=2.23 dH=7.92 dP=0.25
+I (67366) BENCH: PC RX: [GET_SNAPSHOT]
+I (67436) BENCH_PROTOCOL: DUT telemetry: state=1(CLOSED) T=23.89 H=41.81 P=1006.27 latency=95257 us
+I (67436) BENCH: COMPARE | REF 21.68C 49.63% 1006.52hPa | DUT 23.89C 41.81% 1006.27hPa | dT=2.21 dH=7.82 dP=0.25
+I (67566) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.89 H=41.75 P=1006.30 D=6.7 obstacle=1 limits[O=0 C=0 X=0] latency=99383 us
+I (67566) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=1 T=23.89 H=41.75 P=1006.30 D=6.7 open=0 closed=0 contradiction=0 ref_T=21.68 ref_H=49.64 ref_P=1006.52 dT=2.21 dH=7.89 dP=0.22
+I (68366) BENCH: PC RX: [GET_SNAPSHOT]
+I (68476) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.87 H=41.79 P=1006.22 D=4.2 obstacle=1 limits[O=0 C=1 X=0] latency=95194 us
+I (68476) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=1 T=23.87 H=41.79 P=1006.22 D=4.2 open=0 closed=1 contradiction=0 ref_T=21.68 ref_H=49.61 ref_P=1006.56 dT=2.19 dH=7.82 dP=0.34
+I (69366) BENCH: PC RX: [GET_SNAPSHOT]
+I (69476) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.85 H=41.84 P=1006.24 D=5.8 obstacle=1 limits[O=0 C=1 X=0] latency=95195 us
+I (69476) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=1 T=23.85 H=41.84 P=1006.24 D=5.8 open=0 closed=1 contradiction=0 ref_T=21.68 ref_H=49.57 ref_P=1006.52 dT=2.17 dH=7.73 dP=0.28
+I (70366) BENCH: PC RX: [GET_SNAPSHOT]
+I (70476) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.83 H=41.86 P=1006.31 D=5.1 obstacle=1 limits[O=0 C=1 X=0] latency=95167 us
+I (70476) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=1 T=23.83 H=41.86 P=1006.31 D=5.1 open=0 closed=1 contradiction=0 ref_T=21.68 ref_H=49.57 ref_P=1006.55 dT=2.15 dH=7.71 dP=0.24
+I (71366) BENCH: PC RX: [GET_SNAPSHOT]
+I (71476) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.80 H=41.88 P=1006.24 D=5.1 obstacle=1 limits[O=0 C=1 X=0] latency=95233 us
+I (71476) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=1 T=23.80 H=41.88 P=1006.24 D=5.1 open=0 closed=1 contradiction=0 ref_T=21.67 ref_H=49.55 ref_P=1006.62 dT=2.13 dH=7.67 dP=0.38
+I (72366) BENCH: PC RX: [GET_SNAPSHOT]
+I (72476) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.79 H=41.90 P=1006.19 D=62.7 obstacle=0 limits[O=0 C=1 X=0] latency=95206 us
+I (72486) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.79 H=41.90 P=1006.19 D=62.7 open=0 closed=1 contradiction=0 ref_T=21.67 ref_H=49.54 ref_P=1006.60 dT=2.12 dH=7.64 dP=0.41
+I (73376) BENCH: PC RX: [GET_SNAPSHOT]
+I (73496) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.77 H=41.93 P=1006.25 D=62.7 obstacle=0 limits[O=0 C=1 X=0] latency=105265 us
+I (73506) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.77 H=41.93 P=1006.25 D=62.7 open=0 closed=1 contradiction=0 ref_T=21.66 ref_H=49.49 ref_P=1006.55 dT=2.11 dH=7.56 dP=0.30
+I (74376) BENCH: PC RX: [GET_SNAPSHOT]
+I (74486) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.75 H=41.93 P=1006.24 D=62.7 obstacle=0 limits[O=0 C=1 X=0] latency=95230 us
+I (74496) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.75 H=41.93 P=1006.24 D=62.7 open=0 closed=1 contradiction=0 ref_T=21.65 ref_H=49.48 ref_P=1006.55 dT=2.10 dH=7.55 dP=0.31
+I (75366) BENCH: PC RX: [GET_SNAPSHOT]
+I (75476) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.74 H=41.98 P=1006.28 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95053 us
+I (75486) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.74 H=41.98 P=1006.28 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.65 ref_H=49.49 ref_P=1006.56 dT=2.09 dH=7.51 dP=0.28
+I (76376) BENCH: PC RX: [GET_SNAPSHOT]
+I (76486) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.73 H=42.01 P=1006.21 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95208 us
+I (76496) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.73 H=42.01 P=1006.21 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.65 ref_H=49.49 ref_P=1006.51 dT=2.08 dH=7.48 dP=0.30
+I (77376) BENCH: PC RX: [GET_SNAPSHOT]
+I (77486) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.71 H=42.04 P=1006.22 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95399 us
+I (77496) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.71 H=42.04 P=1006.22 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.65 ref_H=49.49 ref_P=1006.59 dT=2.06 dH=7.45 dP=0.37
+I (78376) BENCH: PC RX: [GET_SNAPSHOT]
+I (78486) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.69 H=42.08 P=1006.28 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95194 us
+I (78496) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.69 H=42.08 P=1006.28 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.65 ref_H=49.49 ref_P=1006.56 dT=2.04 dH=7.41 dP=0.28
+I (79376) BENCH: PC RX: [GET_SNAPSHOT]
+I (79486) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.68 H=42.11 P=1006.29 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95222 us
+I (79496) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.68 H=42.11 P=1006.29 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.65 ref_H=49.49 ref_P=1006.56 dT=2.03 dH=7.38 dP=0.27
+I (80376) BENCH: PC RX: [GET_SNAPSHOT]
+I (80486) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.66 H=42.16 P=1006.29 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95215 us
+I (80496) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.66 H=42.16 P=1006.29 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.65 ref_H=49.52 ref_P=1006.56 dT=2.01 dH=7.36 dP=0.27
+I (81376) BENCH: PC RX: [GET_SNAPSHOT]
+I (81486) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.64 H=42.17 P=1006.28 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95196 us
+I (81496) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.64 H=42.17 P=1006.28 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.66 ref_H=49.53 ref_P=1006.63 dT=1.98 dH=7.36 dP=0.35
+I (82376) BENCH: PC RX: [GET_SNAPSHOT]
+I (82486) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.62 H=42.26 P=1006.25 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95254 us
+I (82496) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.62 H=42.26 P=1006.25 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.67 ref_H=49.55 ref_P=1006.54 dT=1.95 dH=7.29 dP=0.29
+I (83376) BENCH: PC RX: [GET_SNAPSHOT]
+I (83486) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.62 H=42.35 P=1006.28 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95256 us
+I (83496) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.62 H=42.35 P=1006.28 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.67 ref_H=49.57 ref_P=1006.64 dT=1.95 dH=7.22 dP=0.36
+I (84376) BENCH: PC RX: [GET_SNAPSHOT]
+I (84486) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.59 H=42.38 P=1006.28 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95423 us
+I (84496) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.59 H=42.38 P=1006.28 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.67 ref_H=49.57 ref_P=1006.62 dT=1.92 dH=7.19 dP=0.34
+I (85376) BENCH: PC RX: [GET_SNAPSHOT]
+I (85486) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.58 H=42.40 P=1006.24 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95276 us
+I (85496) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.58 H=42.40 P=1006.24 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.68 ref_H=49.59 ref_P=1006.55 dT=1.90 dH=7.19 dP=0.31
+I (86376) BENCH: PC RX: [GET_SNAPSHOT]
+I (86486) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.55 H=42.48 P=1006.24 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95257 us
+I (86496) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.55 H=42.48 P=1006.24 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.68 ref_H=49.62 ref_P=1006.52 dT=1.87 dH=7.14 dP=0.28
+I (87376) BENCH: PC RX: [GET_SNAPSHOT]
+I (87486) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.54 H=42.52 P=1006.23 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95246 us
+I (87496) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.54 H=42.52 P=1006.23 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.68 ref_H=49.63 ref_P=1006.55 dT=1.86 dH=7.11 dP=0.32
+I (88376) BENCH: PC RX: [GET_SNAPSHOT]
+I (88486) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.53 H=42.56 P=1006.27 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95248 us
+I (88496) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.53 H=42.56 P=1006.27 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.69 ref_H=49.65 ref_P=1006.54 dT=1.84 dH=7.09 dP=0.27
+I (89376) BENCH: PC RX: [GET_SNAPSHOT]
+I (89486) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.51 H=42.58 P=1006.23 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95207 us
+I (89496) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.51 H=42.58 P=1006.23 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.69 ref_H=49.66 ref_P=1006.62 dT=1.82 dH=7.08 dP=0.39
+I (90376) BENCH: PC RX: [GET_SNAPSHOT]
+I (90486) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.50 H=42.65 P=1006.25 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95149 us
+I (90496) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.50 H=42.65 P=1006.25 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.69 ref_H=49.65 ref_P=1006.57 dT=1.81 dH=7.00 dP=0.32
+I (91386) BENCH: PC RX: [GET_SNAPSHOT]
+I (91496) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.48 H=42.69 P=1006.24 D=30.4 obstacle=0 limits[O=0 C=0 X=0] latency=95358 us
+I (91506) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.48 H=42.69 P=1006.24 D=30.4 open=0 closed=0 contradiction=0 ref_T=21.67 ref_H=49.68 ref_P=1006.57 dT=1.81 dH=6.99 dP=0.33
+I (92386) BENCH: PC RX: [GET_SNAPSHOT]
+I (92496) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.47 H=42.73 P=1006.25 D=29.4 obstacle=0 limits[O=0 C=0 X=0] latency=95313 us
+I (92506) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.47 H=42.73 P=1006.25 D=29.4 open=0 closed=0 contradiction=0 ref_T=21.67 ref_H=49.68 ref_P=1006.62 dT=1.80 dH=6.95 dP=0.37
+I (93386) BENCH: PC RX: [GET_SNAPSHOT]
+I (93496) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.46 H=42.76 P=1006.27 D=19.7 obstacle=0 limits[O=0 C=0 X=0] latency=95234 us
+I (93506) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.46 H=42.76 P=1006.27 D=19.7 open=0 closed=0 contradiction=0 ref_T=21.66 ref_H=49.68 ref_P=1006.55 dT=1.80 dH=6.92 dP=0.28
+I (94386) BENCH: PC RX: [GET_SNAPSHOT]
+I (94496) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.46 H=42.77 P=1006.26 D=13.8 obstacle=1 limits[O=0 C=0 X=0] latency=95193 us
+I (94506) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=1 T=23.46 H=42.77 P=1006.26 D=13.8 open=0 closed=0 contradiction=0 ref_T=21.67 ref_H=49.68 ref_P=1006.60 dT=1.79 dH=6.91 dP=0.34
+I (95386) BENCH: PC RX: [GET_SNAPSHOT]
+I (95496) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.43 H=42.78 P=1006.22 D=7.7 obstacle=1 limits[O=0 C=0 X=0] latency=95255 us
+I (95506) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=1 T=23.43 H=42.78 P=1006.22 D=7.7 open=0 closed=0 contradiction=0 ref_T=21.65 ref_H=49.66 ref_P=1006.45 dT=1.78 dH=6.88 dP=0.23
+I (96386) BENCH: PC RX: [GET_SNAPSHOT]
+I (96496) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.42 H=42.79 P=1006.18 D=43.4 obstacle=0 limits[O=0 C=0 X=0] latency=95236 us
+I (96506) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.42 H=42.79 P=1006.18 D=43.4 open=0 closed=0 contradiction=0 ref_T=21.66 ref_H=49.67 ref_P=1006.58 dT=1.76 dH=6.88 dP=0.40
+I (97386) BENCH: PC RX: [GET_SNAPSHOT]
+I (97496) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.41 H=42.81 P=1006.24 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95224 us
+I (97506) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.41 H=42.81 P=1006.24 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.67 ref_H=49.65 ref_P=1006.62 dT=1.74 dH=6.84 dP=0.38
+I (98386) BENCH: PC RX: [GET_SNAPSHOT]
+I (98496) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.40 H=42.84 P=1006.23 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95227 us
+I (98506) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.40 H=42.84 P=1006.23 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.68 ref_H=49.65 ref_P=1006.58 dT=1.72 dH=6.81 dP=0.35
+I (99386) BENCH: PC RX: [GET_SNAPSHOT]
+I (99496) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.39 H=42.85 P=1006.20 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95255 us
+I (99506) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.39 H=42.85 P=1006.20 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.67 ref_H=49.65 ref_P=1006.59 dT=1.72 dH=6.80 dP=0.39
+I (100386) BENCH: PC RX: [GET_SNAPSHOT]
+I (100496) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.36 H=42.87 P=1006.22 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95246 us
+I (100506) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.36 H=42.87 P=1006.22 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.67 ref_H=49.64 ref_P=1006.56 dT=1.69 dH=6.77 dP=0.34
+I (101386) BENCH: PC RX: [GET_SNAPSHOT]
+I (101496) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.35 H=42.90 P=1006.26 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95226 us
+I (101506) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.35 H=42.90 P=1006.26 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.67 ref_H=49.64 ref_P=1006.62 dT=1.68 dH=6.74 dP=0.36
+I (102386) BENCH: PC RX: [GET_SNAPSHOT]
+I (102496) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.34 H=42.90 P=1006.27 D=63.1 obstacle=0 limits[O=0 C=0 X=0] latency=95215 us
+I (102506) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.34 H=42.90 P=1006.27 D=63.1 open=0 closed=0 contradiction=0 ref_T=21.67 ref_H=49.64 ref_P=1006.53 dT=1.67 dH=6.74 dP=0.26
+I (103386) BENCH: PC RX: [GET_SNAPSHOT]
+I (103496) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.33 H=42.92 P=1006.28 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95217 us
+I (103506) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.33 H=42.92 P=1006.28 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.67 ref_H=49.64 ref_P=1006.56 dT=1.66 dH=6.72 dP=0.28
+I (104396) BENCH: PC RX: [GET_SNAPSHOT]
+I (104506) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.32 H=42.94 P=1006.27 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95447 us
+I (104516) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.32 H=42.94 P=1006.27 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.67 ref_H=49.61 ref_P=1006.57 dT=1.65 dH=6.67 dP=0.30
+I (105396) BENCH: PC RX: [GET_SNAPSHOT]
+I (105506) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.32 H=42.96 P=1006.26 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95341 us
+I (105516) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.32 H=42.96 P=1006.26 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.65 ref_H=49.58 ref_P=1006.56 dT=1.67 dH=6.62 dP=0.30
+I (106396) BENCH: PC RX: [GET_SNAPSHOT]
+I (106506) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.30 H=42.97 P=1006.26 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95311 us
+I (106516) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.30 H=42.97 P=1006.26 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.66 ref_H=49.53 ref_P=1006.47 dT=1.64 dH=6.56 dP=0.21
+I (107396) BENCH: PC RX: [GET_SNAPSHOT]
+I (107506) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.30 H=43.01 P=1006.23 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95270 us
+I (107516) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.30 H=43.01 P=1006.23 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.64 ref_H=49.54 ref_P=1006.49 dT=1.66 dH=6.53 dP=0.26
+I (108396) BENCH: PC RX: [GET_SNAPSHOT]
+I (108456) BENCH_PROTOCOL: DUT telemetry: state=1(CLOSED) T=23.29 H=43.01 P=1006.28 latency=95315 us
+I (108456) BENCH: COMPARE | REF 21.64C 49.54% 1006.51hPa | DUT 23.29C 43.01% 1006.28hPa | dT=1.65 dH=6.53 dP=0.23
+I (108586) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.29 H=43.01 P=1006.36 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=99133 us
+I (108596) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.29 H=43.01 P=1006.36 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.64 ref_H=49.55 ref_P=1006.49 dT=1.65 dH=6.54 dP=0.13
+I (109396) BENCH: PC RX: [GET_SNAPSHOT]
+I (109506) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.27 H=43.03 P=1006.30 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95243 us
+I (109516) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.27 H=43.03 P=1006.30 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.65 ref_H=49.54 ref_P=1006.56 dT=1.62 dH=6.51 dP=0.26
+I (110396) BENCH: PC RX: [GET_SNAPSHOT]
+I (110506) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.26 H=43.05 P=1006.19 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95227 us
+I (110516) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.26 H=43.05 P=1006.19 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.65 ref_H=49.55 ref_P=1006.50 dT=1.61 dH=6.50 dP=0.31
+I (111396) BENCH: PC RX: [GET_SNAPSHOT]
+I (111506) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.25 H=43.06 P=1006.29 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95424 us
+I (111516) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.25 H=43.06 P=1006.29 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.65 ref_H=49.58 ref_P=1006.53 dT=1.60 dH=6.52 dP=0.24
+I (112396) BENCH: PC RX: [GET_SNAPSHOT]
+I (112506) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.24 H=43.08 P=1006.30 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95267 us
+I (112516) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.24 H=43.08 P=1006.30 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.65 ref_H=49.56 ref_P=1006.53 dT=1.59 dH=6.48 dP=0.23
+I (113396) BENCH: PC RX: [GET_SNAPSHOT]
+I (113506) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.23 H=43.08 P=1006.28 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95255 us
+I (113516) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.23 H=43.08 P=1006.28 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.65 ref_H=49.59 ref_P=1006.56 dT=1.58 dH=6.51 dP=0.28
+I (114396) BENCH: PC RX: [GET_SNAPSHOT]
+I (114506) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.22 H=43.06 P=1006.30 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95257 us
+I (114516) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.22 H=43.06 P=1006.30 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.67 ref_H=49.57 ref_P=1006.56 dT=1.55 dH=6.51 dP=0.26
+I (115396) BENCH: PC RX: [GET_SNAPSHOT]
+I (115506) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.21 H=43.09 P=1006.22 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95200 us
+I (115516) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.21 H=43.09 P=1006.22 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.66 ref_H=49.56 ref_P=1006.52 dT=1.55 dH=6.47 dP=0.30
+I (116396) BENCH: PC RX: [GET_SNAPSHOT]
+I (116506) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.20 H=43.10 P=1006.29 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95207 us
+I (116516) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.20 H=43.10 P=1006.29 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.66 ref_H=49.56 ref_P=1006.54 dT=1.54 dH=6.46 dP=0.25
+I (117396) BENCH: PC RX: [GET_SNAPSHOT]
+I (117506) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.20 H=43.10 P=1006.35 D=62.7 obstacle=0 limits[O=0 C=0 X=0] latency=95243 us
+I (117516) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.20 H=43.10 P=1006.35 D=62.7 open=0 closed=0 contradiction=0 ref_T=21.66 ref_H=49.60 ref_P=1006.52 dT=1.54 dH=6.50 dP=0.17
+I (118396) BENCH: PC RX: [GET_SNAPSHOT]
+I (118506) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.18 H=43.16 P=1006.23 D=63.1 obstacle=0 limits[O=0 C=0 X=0] latency=95456 us
+I (118516) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.18 H=43.16 P=1006.23 D=63.1 open=0 closed=0 contradiction=0 ref_T=21.65 ref_H=49.59 ref_P=1006.53 dT=1.53 dH=6.43 dP=0.30
+I (119396) BENCH: PC RX: [GET_SNAPSHOT]
+I (119506) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.17 H=43.17 P=1006.30 D=63.1 obstacle=0 limits[O=0 C=0 X=0] latency=95250 us
+I (119516) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.17 H=43.17 P=1006.30 D=63.1 open=0 closed=0 contradiction=0 ref_T=21.67 ref_H=49.58 ref_P=1006.48 dT=1.50 dH=6.41 dP=0.18
+I (120396) BENCH: PC RX: [GET_SNAPSHOT]
+I (120506) BENCH_PROTOCOL: DUT diag: state=CLOSED auto=1 T=23.17 H=43.19 P=1006.27 D=63.1 obstacle=0 limits[O=0 C=0 X=0] latency=95193 us
+I (120516) BENCH_PROTOCOL: SNAPSHOT state=CLOSED auto=1 sensor_valid=1 distance_valid=1 obstacle=0 T=23.17 H=43.19 P=1006.27 D=63.1 open=0 closed=0 contradiction=0 ref_T=21.67 ref_H=49.59 ref_P=1006.59 dT=1.50 dH=6.40 dP=0.32

@@ -1,0 +1,8 @@
+retest_id,anomaly_id,test,result,notes
+RETEST-001,ANOM-001,GET_STATUS,PASS,Single command is reconstructed and executed correctly
+RETEST-002,ANOM-001,OPEN,PASS,OPEN command executes without fragmented PC command errors
+RETEST-003,ANOM-001,CLOSE,PASS,CLOSE command executes without fragmented PC command errors
+RETEST-004,ANOM-002,ENDSTOP_CONTRADICTION,PASS,Contradictory end-stops now trigger SAFE
+RETEST-005,ANOM-002,OPEN,PASS,Normal CLOSED to OPEN transition still works
+RETEST-006,ANOM-002,CLOSE,PASS,Normal OPEN to CLOSED transition still works
+RETEST-007,ANOM-002,REBOOT_RECOVERY,PASS,Communication and operation remain functional after DUT reboot

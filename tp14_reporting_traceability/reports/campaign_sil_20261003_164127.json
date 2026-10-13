@@ -1,0 +1,40 @@
+{
+    "mode": "SIL",
+    "started_at": "2026-10-03T16:41:27",
+    "results": [
+        {
+            "name": "STATUS",
+            "observed": "CLOSED",
+            "result": "PASS"
+        },
+        {
+            "name": "OPEN",
+            "expected": "OPEN",
+            "observed": "OPEN",
+            "result": "PASS",
+            "duration_s": 0.0
+        },
+        {
+            "name": "CLOSE",
+            "expected": "CLOSED",
+            "observed": "CLOSED",
+            "result": "PASS",
+            "duration_s": 0.0
+        },
+        {
+            "name": "TELEMETRY",
+            "observed": {
+                "temperature": 22.0,
+                "humidity": 50.0,
+                "pressure": 1013.0
+            },
+            "result": "PASS"
+        },
+        {
+            "name": "REBOOT",
+            "result": "SKIPPED",
+            "reason": "reboot not supported by this transport"
+        }
+    ],
+    "finished_at": "2026-10-03T16:41:27"
+}

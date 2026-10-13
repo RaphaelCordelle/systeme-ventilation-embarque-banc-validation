@@ -1,0 +1,6 @@
+mode,name,expected,observed,result,duration_s,reason
+SIL,STATUS,,CLOSED,PASS,,
+SIL,OPEN,OPEN,OPEN,PASS,0.0,
+SIL,CLOSE,CLOSED,CLOSED,PASS,0.0,
+SIL,TELEMETRY,,"{'temperature': 22.0, 'humidity': 50.0, 'pressure': 1013.0}",PASS,,
+SIL,REBOOT,,,SKIPPED,,reboot not supported by this transport

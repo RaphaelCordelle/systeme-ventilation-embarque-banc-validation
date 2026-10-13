@@ -1,0 +1,6 @@
+mode,name,expected,observed,result,duration_s,reason
+HIL,STATUS,,CLOSED,PASS,,
+HIL,OPEN,OPEN,OPENING,FAIL,3.071,
+HIL,CLOSE,CLOSED,OPENING,FAIL,3.072,
+HIL,TELEMETRY,,,SKIPPED,,telemetry not supported by this transport
+HIL,REBOOT,,,SKIPPED,,reboot not supported by this transport

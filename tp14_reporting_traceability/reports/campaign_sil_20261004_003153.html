@@ -1,0 +1,137 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>TP14 Validation Report</title>
+    </head>
+
+    <body>
+        <h1>TP14 Validation Report</h1>
+
+        <p><strong>Mode:</strong> SIL</p>
+        <p><strong>Started:</strong> 2026-10-04T00:31:53</p>
+        <p><strong>Finished:</strong> 2026-10-04T00:31:53</p>
+        <h2>Campaign Metadata</h2>
+
+        <p>
+            <strong>Python version:</strong>
+            3.13.15
+        </p>
+
+        <p>
+            <strong>Git commit:</strong>
+            d437a4b
+        </p>
+        <h2>Test Results</h2>
+
+        <table border="1" cellpadding="6">
+            <tr>
+                <th>Name</th>
+                <th>Expected</th>
+                <th>Observed</th>
+                <th>Result</th>
+                <th>Duration (s)</th>
+                <th>Reason</th>
+            </tr>
+
+
+        <tr>
+            <td>STATUS</td>
+            <td></td>
+            <td>CLOSED</td>
+            <td>PASS</td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>OPEN</td>
+            <td>OPEN</td>
+            <td>OPEN</td>
+            <td>PASS</td>
+            <td>0.0</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>CLOSE</td>
+            <td>CLOSED</td>
+            <td>CLOSED</td>
+            <td>PASS</td>
+            <td>0.0</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>TELEMETRY</td>
+            <td></td>
+            <td>{'temperature': 22.0, 'humidity': 50.0, 'pressure': 1013.0}</td>
+            <td>PASS</td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>REBOOT</td>
+            <td></td>
+            <td></td>
+            <td>SKIPPED</td>
+            <td></td>
+            <td>reboot not supported by this transport</td>
+        </tr>
+
+
+        </table>
+
+        <h2>Traceability Matrix</h2>
+
+        <table border="1" cellpadding="6">
+            <tr>
+                <th>Requirement</th>
+                <th>Description</th>
+                <th>Test</th>
+                <th>Result</th>
+            </tr>
+
+
+        <tr>
+            <td>REQ-STATUS-001</td>
+            <td>The DUT shall report a valid system state.</td>
+            <td>STATUS</td>
+            <td>PASS</td>
+        </tr>
+
+        <tr>
+            <td>REQ-OPEN-001</td>
+            <td>The DUT shall reach OPEN state after an open command.</td>
+            <td>OPEN</td>
+            <td>PASS</td>
+        </tr>
+
+        <tr>
+            <td>REQ-CLOSE-001</td>
+            <td>The DUT shall reach CLOSED state after a close command.</td>
+            <td>CLOSE</td>
+            <td>PASS</td>
+        </tr>
+
+        <tr>
+            <td>REQ-TELEMETRY-001</td>
+            <td>The DUT shall provide telemetry data when supported.</td>
+            <td>TELEMETRY</td>
+            <td>PASS</td>
+        </tr>
+
+        <tr>
+            <td>REQ-REBOOT-001</td>
+            <td>The DUT shall recover after a reboot.</td>
+            <td>REBOOT</td>
+            <td>SKIPPED</td>
+        </tr>
+
+
+        </table>
+
+    </body>
+    </html>

@@ -1,36 +1,66 @@
-# Système de ventilation embarqué & banc de validation
+# Système de ventilation embarqué et banc de validation
 
 <p align="center">
   <img src="docs/images/banc-esp32.jpg" alt="Banc d’essai ESP32 sur breadboard" width="520">
 </p>
 
-Suite de firmwares ESP-IDF écrits en C pour tester séparément les entrées, capteurs et actionneurs d’un petit volet de ventilation. Chaque dossier est un projet autonome ; aucune application intégrée n’est incluse.
+Ce dépôt présente l'évolution d'un projet étudiant ESP32, depuis la validation de périphériques
+isolés jusqu'à un système DUT/BENCH supervisé par Python. Chaque TP reste un projet ou une étape
+autonome afin de conserver la progression pédagogique.
 
-## Contenu
+## Architecture finale
 
-| Projet | Fonction | Résultat observé |
-| --- | --- | --- |
-| [`tp02_gpio_nvs`](tp02_gpio_nvs/main/tp02_gpio_nvs_main.c) | LED sur GPIO18, logs et compteur de démarrages en NVS | compilation vérifiée ; comportement NVS non validé sur la carte |
-| [`tp03_i2c`](tp03_i2c/main/tp03_i2c_main.c) | BME280 en I2C, SDA21 / SCL22, adresse `0x76` | capteur `0x60` détecté, mesures enregistrées |
-| [`tp04_gpio`](tp04_gpio/main/tp04_gpio_main.c) | fins de course 18/19, LED 25/26/27, buzzer 23 | quatre états et rebonds testés |
-| [`tp05_gpio`](tp05_gpio/main/tp05_gpio_main.c) | HC-SR04, TRIG21 / ECHO22, timeout de 30 ms | distances valides et défaut ECHO testés |
-| [`tp06_servo`](tp06_servo/main/tp06_servo_main.c) | servo 50 Hz sur GPIO13 avec fins de course | fermeture observée pendant un essai ; position ouverte non validée |
+- un ESP32 DUT mesure le BME280 et le HC-SR04, lit les fins de course et commande le servo ;
+- une FSM FreeRTOS gère les états, le mode automatique et le passage en SAFE ;
+- un second ESP32 BENCH échange avec le DUT par UART et fournit une mesure BME280 de référence ;
+- le superviseur Python exécute la campagne, collecte les snapshots et exporte les rapports.
 
-Le signal ECHO du HC-SR04 passe par un pont diviseur 5 V vers 3,3 V. Le servo utilise une alimentation 5 V séparée avec masse commune.
+## Progression
 
-## Essais
+| Étape | Contenu principal |
+| --- | --- |
+| TP01 | Non inclus dans ce dépôt. |
+| TP02 à TP06 | NVS, GPIO, I2C/BME280, HC-SR04, servo et fins de course. |
+| TP07 à TP09 | FSM, architecture FreeRTOS et protocole UART. |
+| TP10 | Premier superviseur Python et scénarios YAML. |
+| TP11 / TP11.5 | Contrôleur BENCH puis intégration DUT/BENCH. |
+| TP12 | Injection de défauts et modèles SIL. |
+| TP13 | Interface commune de validation SIL/HIL. |
+| TP14 | Traçabilité et rapports JSON, CSV et HTML. |
+| TP15 | Étape de sécurisation non intégrée à la version finale, comme indiqué dans le changelog TP16.5. |
+| TP16 | Campagne HIL, anomalies, retests et préparation de release. |
+| TP16.5 | Baseline finale validée sur le banc physique, avec rapports JSON/CSV/HTML/XLSX. |
 
-Les essais ont notamment couvert les rebonds des fins de course, l’état contradictoire, un ECHO bloqué et la coupure PWM après timeout. TP02, TP05 et TP06 compilent ; le tableau ci-dessus distingue les observations sur carte des simples vérifications de compilation.
+## Technologies
 
-## Compiler
+ESP-IDF 6.1, ESP32, C, FreeRTOS, UART 115200, I2C, BME280, HC-SR04, SG90, Python,
+pytest et génération de rapports. Le signal ECHO du HC-SR04 doit être adapté de 5 V à 3,3 V ;
+le servo utilise une alimentation 5 V séparée avec masse commune.
 
-ESP-IDF `v6.1-beta1` a été utilisé avec la cible `esp32`. Depuis le dossier d’un TP :
+## Compilation et tests logiciels
+
+Chaque dossier contenant un `CMakeLists.txt` de projet peut être compilé séparément :
 
 ```text
-idf.py set-target esp32
 idf.py build
-idf.py -p COMx flash monitor
 ```
+
+Les configurations reproductibles minimales sont dans les fichiers `sdkconfig.defaults`. Les tests
+Python se lancent depuis le dossier du TP concerné avec le cache pytest désactivé :
+
+```text
+python -m pytest -p no:cacheprovider -q
+```
+
+Les scripts de TP16.5 utilisent un environnement ESP-IDF déjà chargé, ou la variable `IDF_PATH`.
+Aucun flash ni test matériel n'est nécessaire pour parcourir ou vérifier les étapes SIL.
+
+## Statut final
+
+La campagne physique TP16.5 du 10 octobre 2026 à 12:49:52 est conservée dans
+[`tp16_5_final_integration/reports`](tp16_5_final_integration/reports). Elle a produit 120
+échantillons et un résultat global `PASS`. Les essais antérieurs restent des résultats historiques :
+un `FAIL` ou un `SKIPPED` n'est pas converti artificiellement en succès.
 
 ## Vidéos
 
@@ -44,4 +74,6 @@ https://github.com/user-attachments/assets/89d56388-3c67-4811-beb6-8fc78e89c3e2
 
 ## Code tiers
 
-TP03 utilise l’API BME280 de Bosch Sensortec v3.5.1 sous licence BSD 3-Clause. Voir [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
+- [Notices du pilote Bosch BME280](THIRD_PARTY_NOTICES.md)
+
+La licence du code propriétaire du dépôt reste à choisir.

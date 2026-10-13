@@ -1,0 +1,33 @@
+{
+    "campaign": "TP16_HIL_FINAL",
+    "status": "VALIDATED_WITH_LIMITATIONS",
+
+    "bench": {
+        "project": "bench_integrated",
+        "version": "0.1.0",
+        "serial_port": "COM5"
+    },
+
+    "dut": {
+        "project": "dut_integrated",
+        "version": "0.1.0",
+        "serial_port": "COM7"
+    },
+
+    "environment": {
+        "esp_idf": "6.1",
+        "python": "3.13"
+    },
+
+    "interfaces": {
+        "pc_to_bench": "USB serial",
+        "bench_to_dut": "UART 115200 8N1"
+    },
+
+    "campaign_results": {
+        "executed": 15,
+        "passed": 15,
+        "open_anomalies": 0,
+        "closed_anomalies": 2
+    }
+}
