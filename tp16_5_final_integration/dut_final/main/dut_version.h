@@ -1,0 +1,10 @@
+#ifndef DUT_VERSION_H
+#define DUT_VERSION_H
+
+#define DUT_NAME "VENTILATION_DUT"
+#define DUT_VERSION_MAJOR 1
+#define DUT_VERSION_MINOR 0
+#define DUT_VERSION_PATCH 0
+#define DUT_VERSION_STRING "1.0.0"
+
+#endif

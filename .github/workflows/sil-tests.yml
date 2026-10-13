@@ -1,0 +1,52 @@
+name: Tests logiciels
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        directory:
+          - tp10_python_supervisor
+          - tp12_fault_injection/sil_faults
+          - tp13_unified_validation
+          - tp14_reporting_traceability
+          - tp16_hil_campaign
+          - tp16_5_final_integration/host
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+      - name: Installer les dépendances de test
+        run: python -m pip install "pytest>=8.0" "PyYAML>=6.0" "pyserial>=3.5" "openpyxl>=3.1"
+      - name: Exécuter pytest
+        working-directory: ${{ matrix.directory }}
+        run: python -m pytest -p no:cacheprovider -q
+
+  sil:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        directory:
+          - tp13_unified_validation
+          - tp14_reporting_traceability
+          - tp16_hil_campaign
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Installer le transport Python
+        run: python -m pip install "pyserial>=3.5"
+      - name: Exécuter la campagne SIL
+        working-directory: ${{ matrix.directory }}
+        run: python runner.py --mode sil

@@ -1,0 +1,16 @@
+#ifndef BENCH_CONFIG_H
+#define BENCH_CONFIG_H
+
+#include "driver/gpio.h"
+
+#define BENCH_BME_SDA_GPIO    GPIO_NUM_21
+#define BENCH_BME_SCL_GPIO    GPIO_NUM_22
+#define BENCH_BME_I2C_ADDRESS 0x76
+
+#define BENCH_UART_TX_GPIO    GPIO_NUM_17
+#define BENCH_UART_RX_GPIO    GPIO_NUM_16
+#define BENCH_UART_BAUDRATE   115200
+
+#define BENCH_COMPARISON_PERIOD_MS 5000
+
+#endif

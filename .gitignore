@@ -24,7 +24,20 @@ tp06_servo/main/bme280_defs.h
 .idea/
 __pycache__/
 *.py[cod]
+.pytest_cache/
+.test_tmp/
+.coverage
+htmlcov/
+.venv/
+venv/
 *.log
+*.tmp
+*.swp
+*.bak
+
+# Obsolete local source archives
+tp09_uart_protocol/main.zip
+tp11_bench_controller/main.zip
 
 # Operating-system files
 .DS_Store

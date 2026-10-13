@@ -1,0 +1,7 @@
+#ifndef BENCH_VERSION_H
+#define BENCH_VERSION_H
+
+#define BENCH_NAME "ESP32_BENCH_CONTROLLER"
+#define BENCH_VERSION "1.0.0"
+
+#endif

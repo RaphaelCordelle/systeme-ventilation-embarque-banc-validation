@@ -1,0 +1,10 @@
+name: ventilation
+
+setup:
+  mode: normal
+
+action:
+  command: SET_MODE
+
+expect:
+  response: OK

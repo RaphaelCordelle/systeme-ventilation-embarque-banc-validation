@@ -1,0 +1,25 @@
+# ESP-IDF build outputs
+**/build/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Generated demo artifacts
+reports/*
+!reports/.gitkeep
+!reports/demo_20261010_124952.csv
+!reports/demo_20261010_124952.html
+!reports/demo_20261010_124952.json
+!reports/demo_20261010_124952.xlsx
+evidence/*
+!evidence/.gitkeep
+!evidence/demo_serial_20261010_124952.log
+
+# Editor / OS
+.vscode/
+.DS_Store
+Thumbs.db

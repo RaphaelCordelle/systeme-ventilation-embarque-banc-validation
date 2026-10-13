@@ -1,0 +1,10 @@
+name: critical
+
+setup:
+  mode: critical
+
+action:
+  command: GET_STATUS
+
+expect:
+  response: CRITICAL

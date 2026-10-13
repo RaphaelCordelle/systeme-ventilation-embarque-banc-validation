@@ -1,0 +1,10 @@
+name: boot
+
+setup:
+  mode: normal
+
+action:
+  command: HELLO
+
+expect:
+  response: HELLO

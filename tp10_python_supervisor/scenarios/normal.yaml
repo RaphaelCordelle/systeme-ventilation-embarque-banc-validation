@@ -1,0 +1,10 @@
+name: normal
+
+setup:
+  mode: normal
+
+action:
+  command: GET_STATUS
+
+expect:
+  response: NORMAL
