@@ -8,6 +8,12 @@
     "bench": "1.0.0"
   },
   "target": "esp32",
+  "nominal_auto_thresholds": {
+    "open_temperature_c": 26,
+    "close_temperature_c": 25,
+    "open_humidity_pct": 70,
+    "close_humidity_pct": 65
+  },
   "environment": {
     "esp_idf_expected": "6.1",
     "dut_port_expected": "COM7",
@@ -33,6 +39,7 @@
   ],
   "acceptance_document": "docs/ACCEPTANCE_CHECKLIST.md",
   "evidence": {
+    "scope": "historical proof of global DUT/BENCH hardware behavior",
     "report": "reports/demo_20261010_124952.json",
     "serial_log": "evidence/demo_serial_20261010_124952.log"
   }

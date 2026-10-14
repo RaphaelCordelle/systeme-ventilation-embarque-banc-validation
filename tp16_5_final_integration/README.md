@@ -3,7 +3,9 @@
 Cette version consolide les briques réellement développées pendant les TP 02 à 16 en un seul démonstrateur physique cohérent.
 
 > **Statut : baseline 1.0.0 validée sur le banc réel.** La campagne finale conservée a été
-> exécutée le 10 octobre 2026 à 12:49:52 et a produit un résultat global `PASS`.
+> exécutée le 10 octobre 2026 à 12:49:52 et a produit un résultat global `PASS`. Elle constitue
+> une preuve historique du fonctionnement global DUT/BENCH. La configuration nominale publiée est
+> définie ci-dessous.
 
 ## Ce que contient la version finale
 
@@ -109,8 +111,8 @@ Les rapports sont déposés dans `reports/` et le log série brut dans `evidence
 Les seuils sont centralisés dans `dut_final/main/app_config.h` :
 
 ```text
-OPEN  si T >= 23 °C OU H >= 70 %
-CLOSE si T <= 22 °C ET H <= 65 %
+OPEN  si T >= 26 °C OU H >= 70 %
+CLOSE si T <= 25 °C ET H <= 65 %
 ```
 
 L'écart entre ouverture et fermeture crée une hystérésis et évite que le volet oscille autour d'un seul seuil.
@@ -121,7 +123,11 @@ Une commande manuelle `OPEN` ou `CLOSE` désactive volontairement AUTO. `AUTO_ON
 
 Le rapport final `reports/demo_20261010_124952.*` et le journal
 `evidence/demo_serial_20261010_124952.log` constituent la preuve historique de la campagne finale.
-Ils ne doivent pas être régénérés ou modifiés pour simuler une nouvelle validation matérielle.
+Ils démontrent le fonctionnement global du DUT, du BENCH, des capteurs, du servo, des fins de
+course, du mode AUTO et de la supervision. Ils ne doivent pas être régénérés ou modifiés pour
+simuler une nouvelle validation matérielle.
+
+La configuration nominale publiée utilise les seuils 26/25 °C et 70/65 %.
 
 Le dossier `validation_tp16/` conserve les éléments de la baseline TP16 précédente. La configuration
 flash BENCH reste volontairement à 2 Mo pour reproduire le binaire validé ; la table de partitions

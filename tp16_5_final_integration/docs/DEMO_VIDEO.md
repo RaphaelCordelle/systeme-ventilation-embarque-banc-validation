@@ -31,7 +31,8 @@ Le volet démarre CLOSED : LED rouge.
 
 ### 2. Ouverture automatique par température
 
-Réchauffer doucement le BME280 DUT jusqu'au seuil d'ouverture. Ne pas chauffer directement avec une source très chaude.
+Réchauffer doucement le BME280 DUT jusqu'au seuil nominal d'ouverture de 26 °C. Ne pas chauffer
+directement avec une source très chaude.
 
 Attendu :
 
@@ -43,7 +44,7 @@ Le servo entraîne réellement le volet et le mécanisme appuie sur le fin de co
 
 ### 3. Fermeture automatique
 
-Quand la température revient sous le seuil de fermeture, le DUT déclenche :
+Quand la température revient au seuil nominal de fermeture de 25 °C, le DUT déclenche :
 
 ```text
 OPEN -> CLOSING -> CLOSED
@@ -51,8 +52,9 @@ OPEN -> CLOSING -> CLOSED
 
 Le fin de course CLOSED doit être déclenché par le volet lui-même.
 
-La vidéo archivée utilise les seuils de la baseline. Toute autre démonstration doit conserver les
-valeurs de `app_config.h` ou être présentée explicitement comme une configuration différente.
+La configuration nominale publiée utilise 26/25 °C et 70/65 %. La vidéo archivée reste une preuve
+historique du fonctionnement global DUT/BENCH, du mouvement, des capteurs, des fins de course,
+du mode AUTO et de la supervision.
 
 ### 4. Obstacle
 

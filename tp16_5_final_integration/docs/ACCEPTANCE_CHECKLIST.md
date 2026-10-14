@@ -4,6 +4,9 @@ La campagne finale a été exécutée le 10 octobre 2026. Les cases cochées son
 par le rapport `demo_20261010_124952` ou nécessaires à son exécution. Les cases non cochées ne sont
 pas revendiquées par cette preuve et nécessiteraient une nouvelle campagne matérielle.
 
+La configuration nominale publiée utilise 26/25 °C pour la température et 70/65 % pour
+l'humidité. Cette checklist conserve la portée historique de la campagne et son fonctionnement global.
+
 - [x] DUT compile sous ESP-IDF 6.1.
 - [x] BENCH compile sous ESP-IDF 6.1.
 - [x] DUT flash sur COM7 et boot sans reset en boucle.
@@ -17,9 +20,9 @@ pas revendiquées par cette preuve et nécessiteraient une nouvelle campagne mat
 - [x] OPENING/CLOSING sont observés.
 - [ ] Les deux fins de course simultanées provoquent SAFE + buzzer.
 - [ ] Le servo est alimenté en 5 V séparé avec masse commune.
-- [x] AUTO ouvre le volet lorsque le seuil température/humidité est franchi.
+- [x] AUTO provoque une ouverture pendant la campagne historique.
 - [x] Le cycle atteint l'état OPEN.
-- [x] AUTO referme le volet lorsque les seuils bas sont retrouvés.
+- [x] AUTO provoque une fermeture pendant la campagne historique.
 - [x] Le cycle atteint l'état CLOSED.
 - [x] Un obstacle est observé pendant la campagne.
 - [ ] Une fin de course manquante pendant 3 s provoque SAFE.

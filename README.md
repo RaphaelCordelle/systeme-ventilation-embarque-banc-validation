@@ -66,11 +66,11 @@ un `FAIL` ou un `SKIPPED` n'est pas converti artificiellement en succès.
 
 Essai du banc, 15 s :
 
-https://github.com/user-attachments/assets/1c9176a8-151d-4e2f-90f9-9f3effd45db5
+[Voir `essai-banc-01.mp4`](docs/videos/essai-banc-01.mp4)
 
 Essai du banc, 8 s :
 
-https://github.com/user-attachments/assets/89d56388-3c67-4811-beb6-8fc78e89c3e2
+[Voir `essai-banc-02.mp4`](docs/videos/essai-banc-02.mp4)
 
 ## Code tiers
 

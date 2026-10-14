@@ -59,11 +59,11 @@
  * Regulation automatique avec hysteresis.
  * Ces valeurs sont volontairement faciles a modifier pour la video de demo.
  *
- * Ouverture : T >= 23 C OU H >= 70 %
- * Fermeture : T <= 22 C ET H <= 65 %
+ * Ouverture : T >= 26 C OU H >= 70 %
+ * Fermeture : T <= 25 C ET H <= 65 %
  */
-#define AUTO_OPEN_TEMP_C       23.0f
-#define AUTO_CLOSE_TEMP_C      22.0f
+#define AUTO_OPEN_TEMP_C       26.0f
+#define AUTO_CLOSE_TEMP_C      25.0f
 #define AUTO_OPEN_HUMIDITY_PCT 70.0f
 #define AUTO_CLOSE_HUMIDITY_PCT 65.0f
 
