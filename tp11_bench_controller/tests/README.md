@@ -7,4 +7,4 @@
 - Confirmer une réponse de 14 octets à `GET_TELEMETRY`, checksum XOR compris.
 - Vérifier que les températures, humidités et pressions affichées sont plausibles.
 - Laisser fonctionner le banc plusieurs minutes et relever les écarts.
-- Définir les tolérances seulement après analyse de ces mesures.
+- Relever les écarts entre les deux BME280 ; aucun seuil d'étalonnage n'est fixé dans ce TP.

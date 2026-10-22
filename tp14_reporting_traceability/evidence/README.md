@@ -1,4 +1,5 @@
-# Preuves
+# Résultats de l'étape
 
-Ce dossier est réservé aux preuves de campagne. TP14 ne contient pas de nouvelle preuve physique ;
-les rapports présents sous `reports/` proviennent des exécutions SIL ou HIL historiques.
+Les [rapports](../reports/) conservent les résultats SIL/HIL de cette étape.
+Le [journal série de la version intégrée](../../tp16_5_final_integration/evidence/demo_serial_20261010_124952.log)
+documente la session matérielle finale.

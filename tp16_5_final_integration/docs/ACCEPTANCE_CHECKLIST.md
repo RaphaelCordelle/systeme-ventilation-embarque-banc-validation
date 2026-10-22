@@ -1,37 +1,29 @@
-# Checklist d'acceptation physique TP16.5 — archive
+# Validation matérielle du 10 octobre 2026
 
-La campagne finale a été exécutée le 10 octobre 2026. Les cases cochées sont directement étayées
-par le rapport `demo_20261010_124952` ou nécessaires à son exécution. Les cases non cochées ne sont
-pas revendiquées par cette preuve et nécessiteraient une nouvelle campagne matérielle.
+La session `demo_20261010_124952` a enregistré **120 mesures** sur les firmwares DUT et BENCH
+**1.0.0**, avec un verdict global **PASS**.
 
-La configuration nominale publiée utilise 26/25 °C pour la température et 70/65 % pour
-l'humidité. Cette checklist conserve la portée historique de la campagne et son fonctionnement global.
+| Contrôle du rapport | Résultat | Observation |
+|---|---|---|
+| `SMOKE_TEST` | PASS | Capteur de référence et communication avec le DUT disponibles. |
+| `DUT_SENSOR_VALIDITY` | PASS | 120 mesures capteur valides sur 120. |
+| `ENDSTOP_CONSISTENCY` | PASS | Aucun échantillon avec les deux fins de course actifs. |
+| `AUTO_MODE_OBSERVED` | PASS | Mode AUTO présent dans le diagnostic du DUT. |
+| `FULL_OPEN_CLOSE_CYCLE` | PASS | États CLOSED, OPENING, OPEN et CLOSING enregistrés. |
+| `SAFE_STATE` | NOT_OBSERVED | Aucun passage en SAFE pendant cette session normale. |
 
-- [x] DUT compile sous ESP-IDF 6.1.
-- [x] BENCH compile sous ESP-IDF 6.1.
-- [x] DUT flash sur COM7 et boot sans reset en boucle.
-- [x] BENCH flash sur COM5 et smoke test PASS.
-- [x] Les deux versions 1.0.0 sont retournées par GET_VERSIONS.
-- [x] BME280 DUT donne T/H/P plausibles.
-- [x] BME280 BENCH donne T/H/P de référence plausibles.
-- [x] HC-SR04 donne une distance valide avec diviseur de tension sur ECHO.
-- [x] CLOSED physique est observé.
-- [x] OPEN physique est observé.
-- [x] OPENING/CLOSING sont observés.
-- [ ] Les deux fins de course simultanées provoquent SAFE + buzzer.
-- [ ] Le servo est alimenté en 5 V séparé avec masse commune.
-- [x] AUTO provoque une ouverture pendant la campagne historique.
-- [x] Le cycle atteint l'état OPEN.
-- [x] AUTO provoque une fermeture pendant la campagne historique.
-- [x] Le cycle atteint l'état CLOSED.
-- [x] Un obstacle est observé pendant la campagne.
-- [ ] Une fin de course manquante pendant 3 s provoque SAFE.
-- [ ] La commande manuelle OPEN/CLOSE fonctionne et désactive AUTO.
-- [x] AUTO_ON réactive la régulation automatique.
-- [x] Le superviseur Python enregistre 120 snapshots sans erreur d'exécution.
-- [x] JSON généré.
-- [x] CSV généré.
-- [x] HTML généré.
-- [x] XLSX généré.
-- [x] Log série brut généré.
-- [x] `cd host ; python -m pytest -p no:cacheprovider -q` passe.
+Des obstacles sont également présents dans les mesures. Le rapport ne vérifie pas à lui seul
+toutes les réactions de sécurité : contradiction forcée, fin de course manquante ou défaut capteur
+prolongé. Il ne mesure pas non plus les seuils de déclenchement exacts.
+
+Les seuils du code publié sont **26/25 °C** et **70/65 % d'humidité**.
+Les contrôles électriques et la calibration du servo sont décrits dans le [câblage](WIRING.md)
+et la [fiche de calibration](SERVO_CALIBRATION.md).
+
+## Fichiers de la session
+
+- [Rapport JSON et contrôles détaillés](../reports/demo_20261010_124952.json)
+- [Mesures CSV](../reports/demo_20261010_124952.csv)
+- [Rapport HTML](../reports/demo_20261010_124952.html)
+- [Classeur Excel](../reports/demo_20261010_124952.xlsx)
+- [Journal série brut](../evidence/demo_serial_20261010_124952.log)

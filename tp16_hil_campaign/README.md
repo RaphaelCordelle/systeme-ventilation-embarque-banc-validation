@@ -1,10 +1,10 @@
 # TP16 — Campagne HIL
 
-Cette étape conserve les scénarios, anomalies, retests et rapports de la campagne DUT/BENCH. Les
-résultats historiques restent inchangés : `FAIL` et `SKIPPED` gardent leur signification.
+Cette campagne regroupe les scénarios DUT/BENCH, les [anomalies](anomalies/anomaly_log.csv), les
+[retests](retests/retest_log.csv) et les [rapports](reports/). Les résultats gardent le verdict de chaque essai.
 
-Le générateur `reporting/final_report.py` exige désormais un fichier JSON de résultats. Il produit
-un statut `INCOMPLETE` lorsque des preuves manquent et refuse de fabriquer des PASS.
+Le générateur `reporting/final_report.py` lit un fichier JSON de résultats. Un scénario requis
+absent ou non exécuté donne un verdict `INCOMPLETE`.
 
 ```text
 python reporting/final_report.py reports/campaign_hil_20261004_150408.json

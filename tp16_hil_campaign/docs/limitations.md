@@ -1,35 +1,14 @@
-# TP16 - Known limitations
+# Portée de la campagne TP16
 
-## Mechanical actuation
+Cette campagne correspond à l'étape précédant la [version intégrée](../../tp16_5_final_integration/).
 
-The current HIL setup requires manual activation of the OPEN and CLOSED
-end-stops during actuator movement tests.
+- **Mécanique :** les fins de course OPEN et CLOSED ont été actionnés manuellement pendant les
+  essais de mouvement. Le cycle mécanique autonome n'est pas validé par cette campagne.
+- **Automatisation :** le transport série Python couvre STATUS, OPEN et CLOSE. La télémétrie et
+  la reprise après reset ont été examinées dans les logs du BENCH, sans scénario Python automatisé.
+- **Défauts :** perte UART, absence du capteur DUT et défauts des fins de course ont été provoqués
+  physiquement. La dérive et le gel des mesures ne sont pas couverts par ces essais matériels.
 
-The firmware state machine, commands and end-stop handling are validated,
-but the complete autonomous mechanical flap sequence is not considered
-fully integrated in this campaign.
-
-## Automated HIL transport
-
-The Python SerialTransport currently automates STATUS, OPEN and CLOSE.
-
-Some functions validated manually through BENCH logs, including telemetry
-and DUT reboot recovery, are not yet directly exposed as automated Python
-transport capabilities.
-
-## Fault injection
-
-UART loss, DUT sensor absence and end-stop faults were injected physically.
-
-Advanced synthetic fault injection such as controlled sensor drift or frozen
-measurements was not implemented in this campaign.
-
-## CAN
-
-CAN is not part of TP16.
-
-A dedicated CAN extension is planned separately.
-
-## Security
-
-Protocol security is outside the scope of this project version.
+Le CAN et l'authentification du protocole sont hors du périmètre de cette campagne.
+Le [rapport du 10 octobre](../../tp16_5_final_integration/reports/demo_20261010_124952.json)
+conserve les résultats de l'intégration suivante.

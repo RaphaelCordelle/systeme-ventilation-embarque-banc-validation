@@ -1,180 +1,60 @@
 # TP09 — Protocole UART v0
 
-## Objectif
+Le DUT reçoit des trames binaires sur une liaison **115200 bauds, 8N1**.
+Cette version teste les échanges et la lecture du BME280 ; la commande du mécanisme est intégrée
+dans les étapes suivantes.
 
-Définir un protocole simple permettant à un équipement externe de communiquer avec le DUT par UART.
+## Trame
 
-UART transporte uniquement des octets.
-Le protocole définit la signification de ces octets.
+```text
+SOF  | VERSION | TYPE | LENGTH | PAYLOAD  | CHECK
+0xAA | 0x00    | 1 o  | 1 o    | 0..56 o  | 1 o
+```
 
-## Configuration UART
+`LENGTH` compte les octets du payload. `CHECK` est le XOR de tous les octets précédents,
+y compris `SOF`. La taille maximale est donc de 61 octets.
+Ce contrôle détecte des corruptions simples et n'authentifie pas les messages.
 
-- Baud rate : 115200
-- Data bits : 8
-- Parity : None
-- Stop bits : 1
-- Format : 8N1
-
-## Format général d'une trame
-
-SOF | VERSION | TYPE | LENGTH | PAYLOAD | CHECK
-
-### SOF
-
-Valeur indiquant le début d'une nouvelle trame.
-
-Valeur choisie :
-
-0xAA
-
-### VERSION
-
-Version du protocole.
-
-Version actuelle :
-
-0x00
-
-### TYPE
-
-Identifie le type de message.
-
-Types prévus :
-
-- 0x01 : HELLO
-- 0x02 : GET_STATUS
-- 0x03 : SET_MODE
-- 0x04 : GET_TELEMETRY
-- 0x05 : GET_VERSION
-- 0x80 : RESPONSE
-- 0x81 : ERROR
-
-### LENGTH
-
-Nombre d'octets contenus dans PAYLOAD.
-
-### PAYLOAD
-
-Données spécifiques au message.
-
-La taille dépend du type de message.
-
-### CHECK
-
-Champ permettant de vérifier l'intégrité de la trame.
-
-Pour la version 0, un contrôle simple sera utilisé avant l'ajout éventuel d'un CRC.
-
-## Taille maximale
-
-Une trame ne doit pas dépasser 64 octets.
-
-Une trame dépassant cette taille doit être rejetée.
-
-## Timeout de réception
-
-Si une trame commence mais n'est pas terminée dans le délai prévu, elle doit être abandonnée.
-
-Timeout initial :
-
-500 ms
-
-Le parseur doit ensuite revenir à l'attente d'un nouveau SOF.
+Le parseur abandonne une trame si la longueur dépasse 56 octets ou si la réception reste
+interrompue pendant 500 ms. Il attend ensuite un nouveau `0xAA`.
 
 ## Messages
 
-### HELLO
-
-But :
-vérifier que la liaison UART et le protocole fonctionnent.
-
-Requête :
-
-TYPE = 0x01
-LENGTH = 0
-
-Réponse :
-
-TYPE = 0x80
-LENGTH = 0
-
-### GET_STATUS
-
-But :
-demander l'état actuel du DUT.
-
-Requête :
-
-TYPE = 0x02
-LENGTH = 0
-
-Réponse possible :
-
-TYPE = 0x80
-
-La réponse contient un octet : la valeur de l'état courant de la machine à états.
-
-### SET_MODE
-
-But :
-envoyer une commande de test non dangereuse au DUT.
-
-TYPE = 0x03
-
-Le format exact du payload sera défini pendant l'implémentation.
-
-### GET_TELEMETRY
-
-But :
-lire l'état et les mesures du BME280 du DUT.
-
-Requête :
-
-TYPE = 0x04
-LENGTH = 0
-
-La réponse contient exactement 9 octets, encodés en little-endian :
-
-| Octets | Valeur | Unité |
+| Type | Requête | Réponse `0x80` |
 |---|---|---|
-| 0 | état du DUT (`uint8_t`) | - |
-| 1..2 | température x100 (`int16_t`) | °C |
-| 3..4 | humidité x100 (`uint16_t`) | % |
-| 5..8 | pression (`uint32_t`) | Pa |
+| `0x01` | `HELLO`, sans payload | Payload vide |
+| `0x02` | `GET_STATUS`, sans payload | État de la FSM sur 1 octet |
+| `0x03` | `SET_MODE`, payload de 1 octet | Octet reçu, renvoyé à l'identique |
+| `0x04` | `GET_TELEMETRY`, sans payload | État et mesures sur 9 octets |
+| `0x05` | `GET_VERSION`, sans payload | Version majeure, mineure, corrective sur 3 octets |
 
-Le capteur est raccordé comme dans le TP03 : I2C0, SDA GPIO21,
-SCL GPIO22, adresse 0x76. Si la mesure est indisponible, le DUT
-renvoie une trame ERROR avec le code 0x05.
+Dans ce TP, `SET_MODE` est un échange de test : il ne commande pas le servo.
 
-### GET_VERSION
+## Télémétrie
 
-But : lire la version du firmware DUT.
+| Octets | Valeur | Encodage |
+|---|---|---|
+| 0 | État du DUT | `uint8_t` |
+| 1–2 | Température en °C × 100 | `int16_t`, little-endian |
+| 3–4 | Humidité en % × 100 | `uint16_t`, little-endian |
+| 5–8 | Pression en Pa | `uint32_t`, little-endian |
 
-Requête :
+Le BME280 utilise I2C0, SDA GPIO21, SCL GPIO22 et l'adresse `0x76`, comme au TP03.
 
-TYPE = 0x05
-LENGTH = 0
+## Erreurs
 
-La réponse contient trois octets : version majeure, mineure et corrective.
+Les réponses `0x81` contiennent un code sur un octet :
 
-## Erreurs prévues
+| Code | Signification |
+|---|---|
+| `0x01` | XOR invalide |
+| `0x02` | Version non prise en charge |
+| `0x03` | Longueur de `SET_MODE` invalide |
+| `0x04` | Type de message inconnu |
+| `0x05` | Mesure BME280 indisponible |
 
-Le DUT doit détecter au minimum :
+Le parseur rejette directement les versions et longueurs invalides pendant la réception.
+Les autres contrôles sont réalisés lors du traitement de la trame.
 
-- version inconnue ;
-- type de message inconnu ;
-- longueur invalide ;
-- trame trop longue ;
-- timeout de réception ;
-- trame malformée.
-
-Codes renvoyés par l'implémentation actuelle :
-
-- 0x01 : contrôle XOR invalide ;
-- 0x02 : version non prise en charge ;
-- 0x03 : longueur de SET_MODE invalide ;
-- 0x04 : type de message inconnu ;
-- 0x05 : télémétrie indisponible.
-
-Le DUT ne doit pas rester bloqué après une erreur.
-Il doit revenir à l'attente d'une nouvelle trame.
+Le [protocole de la version intégrée](../tp16_5_final_integration/docs/PROTOCOL.md) ajoute le
+mode automatique et le diagnostic détaillé.

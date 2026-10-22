@@ -8,4 +8,5 @@ python runner.py --mode sil
 python -m pytest -p no:cacheprovider -q
 ```
 
-La CI publique se trouve dans `.github/workflows/sil-tests.yml` à la racine du dépôt.
+Les [tests GitHub Actions](../.github/workflows/sil-tests.yml) exécutent les contrôles logiciels
+et la campagne SIL.

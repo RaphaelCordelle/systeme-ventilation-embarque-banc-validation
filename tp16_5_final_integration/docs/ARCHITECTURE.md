@@ -1,58 +1,43 @@
-# Architecture logicielle TP16.5
+# Architecture de la version intégrée
 
-## DUT
-
-```text
-Telemetry/BME280 ---\
-HC-SR04 ------------> SensorTask ---> latest snapshot ---> UART diagnostics
-End-stops ----------/      |
-                             v
-                         ControlTask ---> FSM
-                             |             |
-                             |             +--> indicators LEDs/buzzer
-                             v
-                        ActuatorTask
-                             |
-                             v
-                            SG90
-```
-
-`SensorTask` est propriétaire de l'acquisition physique. Le dernier `sensor_snapshot_t` est partagé via un petit module protégé par mutex afin que le protocole UART puisse exposer une télémétrie cohérente sans lancer une seconde lecture I2C concurrente.
-
-`ControlTask` applique les retours de position, les commandes manuelles, le mode automatique, la sécurité obstacle et le timeout de mouvement.
-
-Une commande manuelle bascule automatiquement en MANUAL. `AUTO_ON` réactive la logique température/humidité.
-
-## BENCH
+## Carte DUT
 
 ```text
-BME280 reference ---> Bench Controller <--- UART ---> DUT
-                           |
-                           +--> comparison / timing / smoke test
-                           |
-                           +--> USB serial commands
-                                      |
-                                      v
-                                Python host
+BME280, HC-SR04, fins de course
+              │
+         SensorTask → dernier snapshot → diagnostic UART
+              │
+         ControlTask → machine à états, LED et buzzer
+              │
+         ActuatorTask → servo SG90
 ```
 
-Le mutex BENCH empêche `ComparisonTask` et la supervision PC d'effectuer deux transactions DUT simultanées.
+`SensorTask` réalise les acquisitions. Le dernier `sensor_snapshot_t` est partagé sous mutex :
+la télémétrie réutilise cette mesure sans lancer une lecture I2C concurrente.
 
-## États DUT
+`ControlTask` traite les retours de position, les commandes, le mode AUTO et les défauts.
+`ActuatorTask` applique les commandes du servo. Une commande manuelle désactive AUTO ;
+`AUTO_ON` réactive la régulation par température et humidité.
+
+## Carte BENCH et PC
+
+Le BENCH relie le DUT au PC et possède son propre BME280. Il compare les mesures, chronomètre les
+réponses et réalise le smoke test. Un mutex empêche les interrogations périodiques et les commandes
+PC d'utiliser simultanément l'UART du DUT.
+
+Le superviseur Python demande des snapshots au BENCH par USB série, enregistre les changements
+d'état et génère les rapports d'essai.
+
+## Machine à états
 
 ```text
-UNKNOWN
-  | fin de course CLOSED / OPEN
-  v
-CLOSED --OPEN--> OPENING --LIMIT_OPEN--> OPEN
-  ^                                  |
-  |                                  |
-  +----LIMIT_CLOSED<-- CLOSING <-----+
-                         |
-                         +--OBSTACLE--> OPENING
+CLOSED → OPENING → OPEN → CLOSING → CLOSED
+                           │
+                        obstacle → OPENING
 
-CONTRADICTION / SENSOR_FAULT / TIMEOUT
-                 |
-                 v
-                SAFE
+Défaut capteur répété, contradiction ou timeout → SAFE
 ```
+
+Au démarrage, l'état est `UNKNOWN` jusqu'à l'identification de la position.
+Les fins de course confirment les positions `OPEN` et `CLOSED`. `SAFE` arrête le mouvement
+et verrouille l'alarme jusqu'au redémarrage.

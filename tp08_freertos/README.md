@@ -1,7 +1,7 @@
 # TP08 — Architecture FreeRTOS
 
-Cette étape sépare acquisition, contrôle et actionnement dans des tâches FreeRTOS reliées par des
-files. Le capteur est encore simulé : cette version illustre l'architecture, pas une acquisition
-matérielle complète.
+L'acquisition, le contrôle et l'actionnement sont séparés dans trois tâches reliées par des files.
+Les mesures et les actions sont simulées pour tester les échanges entre tâches. Leur rôle est
+détaillé dans [l'architecture](architecture.md).
 
 Projet autonome ESP-IDF, cible `esp32`.

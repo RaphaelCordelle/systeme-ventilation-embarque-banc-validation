@@ -1,6 +1,8 @@
 # TP11.5 — Intégration DUT/BENCH
 
-Cette étape regroupe deux projets ESP-IDF autonomes : `dut_integrated` pour le système de ventilation
-et `bench_integrated` pour le contrôleur de validation. Leur communication utilise l'UART à 115200.
+Cette première intégration réunit deux projets ESP-IDF : [`dut_integrated/`](dut_integrated/) pour
+le volet et [`bench_integrated/`](bench_integrated/) pour le banc. Les cartes communiquent par UART
+à 115200 bauds.
 
-Le dossier `sil_tests/` est réservé aux tests logiciels ; les anciens fichiers vides ont été retirés.
+La [version finale](../tp16_5_final_integration/) reprend cette séparation et ajoute le mode AUTO
+ainsi que l'enregistrement des essais.

@@ -1,6 +1,6 @@
 # TP09 — Protocole UART
 
-Cette étape ajoute le cadrage, le checksum, le parseur et les réponses UART du DUT. La FSM reste
-initialisée à UNKNOWN à ce stade ; les mouvements réels arrivent dans les TP d'intégration.
+Ce firmware reçoit et décode les trames UART, vérifie leur checksum et répond aux requêtes du banc.
+La FSM est initialisée à UNKNOWN ; cette étape teste la communication et la télémétrie du BME280.
 
-Le format des messages est décrit dans `protocol_v0.md`.
+Le [format des messages](protocol_v0.md) détaille les requêtes, les réponses et les codes d'erreur.

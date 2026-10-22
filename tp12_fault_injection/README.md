@@ -1,7 +1,8 @@
 # TP12 — Injection de défauts
 
-Ce TP décrit les défauts du capteur, des fins de course, de l'UART et de l'alimentation. Le dossier
-`sil_faults/` contient un modèle logiciel et ses tests.
+J'ai testé la réaction du système aux défauts capteur, aux fins de course et aux interruptions UART.
+Le [catalogue](fault_catalog.md) décrit les cas étudiés ; les [essais matériels](HIL_TEST.md)
+résument les observations et la correction de la reprise UART.
 
-`fault_injection.c/.h` reste un exercice autonome non relié à un projet CMake. Il est conservé pour
-documenter l'intention pédagogique ; il ne faut pas le présenter comme du code compilé par le DUT.
+[`sil_faults/`](sil_faults/) contient le modèle Python et ses tests. Les fichiers `fault_injection.c`
+et `.h` sont un exercice séparé, hors de la compilation du DUT.

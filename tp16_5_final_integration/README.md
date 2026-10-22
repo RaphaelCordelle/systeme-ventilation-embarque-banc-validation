@@ -1,136 +1,71 @@
-# TP16.5 — Banc de ventilation intégré final
+# Version intégrée du volet et du banc
 
-Cette version consolide les briques réellement développées pendant les TP 02 à 16 en un seul démonstrateur physique cohérent.
+Cette version réunit les deux firmwares ESP32 et le superviseur Python. Elle reprend les fonctions
+testées dans les étapes précédentes : acquisition, commande du volet, retour des fins de course,
+mode automatique et suivi des essais.
 
-> **Statut : baseline 1.0.0 validée sur le banc réel.** La campagne finale conservée a été
-> exécutée le 10 octobre 2026 à 12:49:52 et a produit un résultat global `PASS`. Elle constitue
-> une preuve historique du fonctionnement global DUT/BENCH. La configuration nominale publiée est
-> définie ci-dessous.
+[Vidéo du montage](../media/demonstration-volet.mp4) · [Photos](../media/) ·
+[Rapport matériel du 10 octobre 2026](reports/demo_20261010_124952.json)
 
-## Ce que contient la version finale
+## Les trois parties
 
-### ESP32 DUT
+| Partie | Rôle |
+|---|---|
+| [`dut_final/`](dut_final/) | Lit le BME280, le HC-SR04 et les fins de course ; pilote le SG90, les LED et le buzzer sous FreeRTOS. |
+| [`bench_final/`](bench_final/) | Interroge le DUT par UART, lit le BME280 de référence et expose les commandes au PC. |
+| [`host/`](host/) | Enregistre les mesures, vérifie le cycle observé et produit les rapports JSON, CSV, HTML et XLSX. |
 
-- BME280 DUT : température, humidité, pression.
-- HC-SR04 : distance et détection d'obstacle.
-- Deux fins de course : OPEN / CLOSED avec anti-rebond.
-- SG90 : ouverture / fermeture du volet.
-- LED rouge / jaune / verte héritées du TP04.
-- Buzzer : alarme latched en état SAFE.
-- FreeRTOS : SensorTask, ControlTask, ActuatorTask et tâche UART.
-- Machine à états : UNKNOWN, CLOSED, OPENING, OPEN, CLOSING, SAFE.
-- Mode AUTO température/humidité avec hystérésis.
-- Réouverture automatique si un obstacle est détecté pendant la fermeture.
-- Timeout mouvement -> SAFE.
-- Contradiction des fins de course -> SAFE.
-- Plusieurs erreurs BME280 consécutives -> SAFE.
-- UART cadré vers le Bench Controller.
-- Compteur de boot NVS repris du TP02.
+Le mode AUTO ouvre le volet à **26 °C ou 70 % d'humidité** et le ferme à **25 °C et 65 %**.
+Une commande manuelle `OPEN` ou `CLOSE` désactive AUTO ; `AUTO_ON` le réactive.
+Un obstacle pendant la fermeture provoque une réouverture. Les défauts capteur répétés, une
+contradiction des fins de course ou un timeout de mouvement entraînent l'état `SAFE`.
 
-### ESP32 BENCH
+## Compiler et lancer
 
-- BME280 de référence indépendant.
-- UART BENCH <-> DUT protégé par mutex.
-- Mesure de latence et resynchronisation UART.
-- GET_VERSIONS, GET_REFERENCE, télémétrie et diagnostic complet.
-- Commandes manuelles OPEN/CLOSE conservées pour les tests.
-- Activation/désactivation du mode automatique.
-- Smoke test autonome.
-- Snapshot combiné DUT + référence destiné au superviseur Python.
-
-### Superviseur Python
-
-`host/demo_supervisor.py` enregistre une démonstration réelle et génère automatiquement :
-
-- log série brut ;
-- JSON ;
-- CSV ;
-- HTML ;
-- XLSX Excel ;
-- événements de changement d'état ;
-- checks de smoke test, validité capteur, cohérence des fins de course et cycle physique observé.
-
-## Architecture
-
-```text
-BME280 DUT ───────┐
-HC-SR04 ──────────┤
-Fins de course ───┤
-                  v
-          ESP32 DUT / FreeRTOS
-          ├─ FSM / logique AUTO
-          ├─ SG90 -> volet réel
-          ├─ LEDs
-          └─ buzzer
-                  |
-                  | UART 115200 8N1
-                  v
-          ESP32 Bench Controller
-          ├─ BME280 référence
-          ├─ comparaison DUT / REF
-          ├─ timing / smoke test
-          └─ supervision
-                  |
-                  | USB série
-                  v
-          Python demo_supervisor.py
-          ├─ logs
-          ├─ événements
-          ├─ CSV / JSON / HTML
-          └─ XLSX
-```
-
-## Démarrage rapide
-
-Depuis un terminal dans lequel ESP-IDF 6.1 est chargé :
+Prérequis : ESP-IDF 6.1, Python 3.13 et PowerShell. Depuis ce dossier, dans un terminal ESP-IDF :
 
 ```powershell
 .\scripts\build_all.ps1
+python -m pip install -r .\host\requirements.txt
 ```
 
-Le script utilise `idf.py` présent dans le `PATH`. S'il est absent, il charge `export.ps1` depuis
-la variable d'environnement `IDF_PATH`.
-
-Installer ensuite les dépendances Python :
+Après vérification du [câblage](docs/WIRING.md), flasher les deux cartes en adaptant les ports :
 
 ```powershell
-cd ..
-pip install -r .\host\requirements.txt
+.\scripts\flash_all.ps1 -DutPort COM7 -BenchPort COM5
+.\scripts\run_demo.ps1 -BenchPort COM5 -Duration 90
 ```
 
-Puis lancer l'enregistrement de démonstration :
+Le superviseur attend un cycle complet d'ouverture et de fermeture. Il écrit les rapports dans
+`reports/` et le flux série brut dans `evidence/`.
+
+Les scripts de compilation et de flash utilisent `idf.py` ou chargent ESP-IDF depuis `IDF_PATH`.
+La [calibration du SG90](docs/SERVO_CALIBRATION.md) décrit les réglages du mécanisme.
+
+## Validation
+
+La session du **10 octobre 2026** contient 120 mesures et un verdict global `PASS` : communication
+DUT/BENCH, mesures capteur valides, cohérence des fins de course et cycle d'ouverture/fermeture
+observé. L'état `SAFE` n'a pas été sollicité pendant cette session normale.
+
+- [Rapports JSON, CSV, HTML et Excel](reports/)
+- [Journal série de la session](evidence/demo_serial_20261010_124952.log)
+- [Détail des contrôles et de leur portée](docs/ACCEPTANCE_CHECKLIST.md)
+- [Campagne TP16 précédente](validation_tp16/)
+
+Pour exécuter les tests du superviseur :
 
 ```powershell
-python .\host\demo_supervisor.py --port COM5 --duration 90 --require-cycle
+cd .\host
+python -m pytest -p no:cacheprovider -q
 ```
 
-Les rapports sont déposés dans `reports/` et le log série brut dans `evidence/`.
+## Référence technique
 
-## Mode automatique
+[Architecture](docs/ARCHITECTURE.md) · [Commandes PC](docs/COMMANDS.md) ·
+[Protocole UART](docs/PROTOCOL.md) · [Intégration des TP](docs/CHANGELOG_FROM_TPS.md)
 
-Les seuils sont centralisés dans `dut_final/main/app_config.h` :
-
-```text
-OPEN  si T >= 26 °C OU H >= 70 %
-CLOSE si T <= 25 °C ET H <= 65 %
-```
-
-L'écart entre ouverture et fermeture crée une hystérésis et évite que le volet oscille autour d'un seul seuil.
-
-Une commande manuelle `OPEN` ou `CLOSE` désactive volontairement AUTO. `AUTO_ON` le réactive.
-
-## Validation conservée
-
-Le rapport final `reports/demo_20261010_124952.*` et le journal
-`evidence/demo_serial_20261010_124952.log` constituent la preuve historique de la campagne finale.
-Ils démontrent le fonctionnement global du DUT, du BENCH, des capteurs, du servo, des fins de
-course, du mode AUTO et de la supervision. Ils ne doivent pas être régénérés ou modifiés pour
-simuler une nouvelle validation matérielle.
-
-La configuration nominale publiée utilise les seuils 26/25 °C et 70/65 %.
-
-Le dossier `validation_tp16/` conserve les éléments de la baseline TP16 précédente. La configuration
-flash BENCH reste volontairement à 2 Mo pour reproduire le binaire validé ; la table de partitions
-mono-application tient dans cette capacité même si la carte physique dispose de 4 Mo.
-
-Le TP15 de sécurisation HMAC/anti-rejeu n'est pas intégré : cette version ne revendique donc aucune authentification cryptographique du protocole.
+Les seuils sont définis dans [`app_config.h`](dut_final/main/app_config.h). Les rapports archivés
+décrivent la session enregistrée et ne constituent pas une nouvelle mesure de ces seuils.
+Le protocole n'intègre ni HMAC ni protection contre le rejeu. La configuration flash du BENCH
+reste à 2 Mo, comme celle utilisée pour la campagne conservée.

@@ -32,6 +32,6 @@ contient 9 octets : état, température x100, humidité x100 et pression en Pa.
 
 ## Validation
 
-La compilation vérifie la cohérence logicielle. La validation finale requiert
-deux ESP32, deux BME280, le câblage UART et une vérification des valeurs réelles.
-Les tolérances ne sont volontairement pas figées avant cette campagne de mesures.
+Les [vérifications matérielles](tests/README.md) portent sur les échanges entre les deux ESP32 et
+la comparaison des BME280. À cette étape, les écarts sont affichés sans seuil de verdict métrologique.
+La [campagne intégrée](../tp16_5_final_integration/reports/) conserve les mesures du montage final.
