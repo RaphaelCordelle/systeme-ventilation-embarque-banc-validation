@@ -20,10 +20,7 @@ static void actuator_stop(void)
         "STOP"
     );
 
-    /*
-     * Ici vient la commande réelle
-     * du servo provenant du TP06.
-     */
+    /* TP08 : arret simule, sans commande PWM. */
 }
 
 
@@ -34,10 +31,7 @@ static void actuator_open(void)
         "OPEN"
     );
 
-    /*
-     * Ici vient la commande réelle
-     * d'ouverture du servo.
-     */
+    /* TP08 : ouverture simulee, observee dans les logs. */
 }
 
 
@@ -48,10 +42,7 @@ static void actuator_close(void)
         "CLOSE"
     );
 
-    /*
-     * Ici vient la commande réelle
-     * de fermeture du servo.
-     */
+    /* TP08 : fermeture simulee, observee dans les logs. */
 }
 
 

@@ -1,6 +1,6 @@
 # TP07 — Exigences du DUT
 
-Ce document définit les comportements attendus du système avant l'implémentation de la machine à états.
+Ces exigences ont servi de base à la machine à états du DUT.
 
 | ID | Exigence | Criticité | Vérification |
 |---|---|---|---|

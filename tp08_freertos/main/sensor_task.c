@@ -19,13 +19,7 @@ static sensor_snapshot_t sensor_read_snapshot(void)
     sensor_snapshot_t snapshot =
         {0};
 
-    /*
-     * Les drivers réels des TP03-TP06
-     * viennent alimenter ces champs.
-     *
-     * Le TP08 ne doit pas dupliquer
-     * la logique des drivers.
-     */
+    /* Snapshot factice pour tester les echanges entre taches du TP08. */
 
     snapshot.temperature = 0.0f;
     snapshot.humidity = 0.0f;

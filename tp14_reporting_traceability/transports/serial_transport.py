@@ -88,7 +88,7 @@ class SerialTransport(DeviceTransport):
 
     def get_telemetry(self) -> dict:
         return {
-            "raw": "not implemented yet"
+            "raw": "telemetry not supported by this transport"
         }
 
     def open_actuator(self) -> None:

@@ -57,7 +57,7 @@
 
 /*
  * Regulation automatique avec hysteresis.
- * Ces valeurs sont volontairement faciles a modifier pour la video de demo.
+ * Seuils de fonctionnement du volet.
  *
  * Ouverture : T >= 26 C OU H >= 70 %
  * Fermeture : T <= 25 C ET H <= 65 %
